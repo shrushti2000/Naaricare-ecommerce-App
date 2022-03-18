@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright&family=Inter:wght@300&family=Petemoss&display=swap');
 html{
   font-size: 62.5%;
 }
 body{
   overflow-y: auto;
+  font-family: 'Inter', sans-serif;
 }
 :root{
   --primary-bg-color:#E2C2B9;
   --secondary-bg-color:#694E4E;
+  --primary-text-color:#694E4E;
+  --secondary-text-color:#99A799;
+  --black:#323232;
+  --white:#ffffff;
 }

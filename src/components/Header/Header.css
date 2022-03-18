@@ -1,4 +1,8 @@
 .navigation-container{
-    background-color: var( --white);
+    background-color: var(--white);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.lib-name-1,.lib-name-2{
+    font-family: 'Cormorant Upright', serif;
+    font-size: 3rem;
 }

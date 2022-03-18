@@ -44,3 +44,11 @@
 .subheader-items:hover {
   color: var(--secondary-text-color);
 }
+@media only screen and (max-width: 600px) {
+  html{
+    font-size: 50%;
+  }
+  .subheader-container{
+      display: none;
+  }
+}

@@ -1,0 +1,26 @@
+.searchbar-container{
+    width: 40rem;
+    height: 3.5rem;
+    background-color: lightgrey;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin: 0px;
+}
+.fa-search{
+    font-size: 2rem;
+    padding: 5px;
+    color: var(--secondary-bg-color);
+}
+.search-input{
+    background-color: lightgrey;
+}
+@media only screen and (max-width: 600px) {
+    html{
+      font-size: 50%;
+    }
+    .searchbar-container{
+        display: none;
+    }
+   
+}
