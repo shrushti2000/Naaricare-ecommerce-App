@@ -4,6 +4,7 @@ import '../../App.css'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import { StateContext } from '../../Context'
+import { getFilteredData, getPriceRangedData } from '../../utilityFunctions'
 import './ProductListingPage.css'
 
 const ProductListingPage = () => {
@@ -21,6 +22,8 @@ const ProductListingPage = () => {
     };
      fetchData();
   },[])
+  const priceRangedData=getPriceRangedData(state.products,state.priceRange)
+  const filteredData=getFilteredData(priceRangedData,state)
   return (
     <>
      <div class="product-page-container">
@@ -28,7 +31,7 @@ const ProductListingPage = () => {
       <div class="product-display-container">
         <h2 class="sub-heading">Showing all Products</h2>
         <div class="product-container">
-         
+         {filteredData.map(item=><ProductCard item={item}/>)}
         </div>
       </div>
     </div>

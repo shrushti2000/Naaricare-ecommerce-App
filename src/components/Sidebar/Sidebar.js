@@ -1,7 +1,10 @@
 import React from 'react'
+import { useContext } from 'react'
+import { StateContext } from '../../Context'
 import './Sidebar.css'
 
 const Sidebar = () => {
+  const {state,dispatch}=useContext(StateContext)
 
   return (
     <>
@@ -10,8 +13,8 @@ const Sidebar = () => {
           <h3 class="filter-sidebar-heading">Filters</h3>
           <h5 class="filter-heading">Filter by price</h5>
           <div class="filter-container">
-            <select name="price" class="price-filter">
-              <option value="100-500" class="text-sm">under 500</option>
+            <select name="price" class="price-filter" onChange={(e)=>dispatch({type:'SET_PRICE_RANGE',payload:e.target.value})}>
+              <option value="0-500" class="text-sm" >under 500</option>
               <option value="500-1000" class="text-sm">500-1000</option>
               <option value="1000-2000" class="text-sm">1000-2000</option>
               <option value="2000" class="text-sm">2000 and above</option>
