@@ -22,11 +22,11 @@ const Sidebar = () => {
           </div>
           <h5 class="filter-heading">Category</h5>
           <div class="filter-container">
-            <label class="text-sm"> <input type="checkbox" />Make up</label>
-            <label class="text-sm"> <input type="checkbox" />Skin Care</label>
-            <label class="text-sm"> <input type="checkbox" />Body Care</label>
-            <label class="text-sm"> <input type="checkbox" />Menstrual Hygiene</label>
-            <label class="text-sm"> <input type="checkbox" />Hair Care</label>
+            <label class="text-sm"> <input type="checkbox" onChange={(e)=>dispatch({type:'SET_CATEGORY',payload:"Makeup"})}/>Make up</label>
+            <label class="text-sm"> <input type="checkbox"  onChange={(e)=>dispatch({type:'SET_CATEGORY',payload:"Skincare"})}/>Skin Care</label>
+            <label class="text-sm"> <input type="checkbox"  onChange={(e)=>dispatch({type:'SET_CATEGORY',payload:"Bodycare"})}/>Body Care</label>
+            <label class="text-sm"> <input type="checkbox"  onChange={(e)=>dispatch({type:'SET_CATEGORY',payload:"MenstrualHygiene"})}/>Menstrual Hygiene</label>
+            <label class="text-sm"> <input type="checkbox" onChange={(e)=>dispatch({type:'SET_CATEGORY',payload:"Haircare"})}/>Hair Care</label>
           </div>
           <h5 class="filter-heading">Rating</h5>
           <div class="filter-container">

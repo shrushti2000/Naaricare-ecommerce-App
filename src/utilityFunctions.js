@@ -21,6 +21,9 @@ export const getSortedData=(data,sortType)=>{
 
 export const getFilteredData = (data, state) => {
     console.log('filter data')
-    let filteredData = data;
+    let filteredData = [...data];
+    if(state.sortByFilters.sortByCategory.length!==0){
+        filteredData=filteredData.filter(item=>state.sortByFilters.sortByCategory.includes(item.categoryName))
+    }
     return filteredData;
 }

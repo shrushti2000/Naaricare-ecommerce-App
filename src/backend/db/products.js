@@ -51,7 +51,7 @@ export const products = [
     info: "Maybelline New York Hypercurl Mascara Waterproof gives a long lastig look. Contains Wax coating & special bristles that can reach the lash line up to the tip Gives 75% curled effect with a thick",
     img: LakmeMascara,
     price: 319,
-    category: "Makeup",
+    categoryName: "Makeup",
     brand: "Maybelline",
     inStock: "true",
     fastDelivery: "true",
