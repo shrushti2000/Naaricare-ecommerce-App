@@ -37,8 +37,8 @@ const Sidebar = () => {
           </div>
           <h5 class="filter-heading">Sort by</h5>
           <div class="filter-container">
-            <label class="text-sm"> <input type="radio" name="sortBy" value="low-to-high" />Low to High</label>
-            <label class="text-sm"> <input value="high-to-low" name="sortBy" type="radio" /> High to Low</label>
+            <label class="text-sm"> <input type="radio" name="sortBy" value="low-to-high" onClick={()=>dispatch({type:'SET_SORT_TYPE',payload:"low-to-high"})}/>Low to High</label>
+            <label class="text-sm"> <input value="high-to-low" name="sortBy" type="radio" onClick={()=>dispatch({type:'SET_SORT_TYPE',payload:"high-to-low"})}/> High to Low</label>
           </div>
         </div>
       </div>
