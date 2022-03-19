@@ -1,10 +1,11 @@
 import React from 'react'
+import './ProductCard.css'
 
 const ProductCard = ({item}) => {
   
   return (
     <div class="card__container flex-vt">
-      <img class="card__image" src={item.img} style={{ height: "250px"}} />
+      <img class="card__image" src={item.img}  />
       <h3 class="card__title">{item.name}</h3>
       <p class="card__description">{item.desc}</p>
       <div class="card__text-wrapper-1 flex-hz">

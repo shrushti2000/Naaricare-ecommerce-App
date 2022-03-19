@@ -12,9 +12,9 @@ export const getPriceRangedData = (data, priceRange) => {
 
 export const getSortedData = (data, sortType) => {
     if (sortType === "low-to-high") {
-        return data.sort((a, b) => a['price'] - b['price'])
+        return [...data].sort((a, b) => a['price'] - b['price'])
     } else if (sortType === "high-to-low") {
-        return data.sort((a, b) => b['price'] - a['price'])
+        return [...data].sort((a, b) => b['price'] - a['price'])
     }
     return data;
 }
