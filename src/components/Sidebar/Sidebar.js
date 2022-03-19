@@ -30,10 +30,10 @@ const Sidebar = () => {
           </div>
           <h5 class="filter-heading">Rating</h5>
           <div class="filter-container">
-            <label class="text-sm"> <input name="rating" value="5" type="radio" /> 5 star</label>
-            <label class="text-sm"> <input name="rating" value="4" type="radio" /> 4 star</label>
-            <label class="text-sm"> <input name="rating" value="3" type="radio" /> 3 star</label>
-            <label class="text-sm"> <input name="rating" value="2" type="radio" /> 2 star</label>
+            <label class="text-sm"> <input name="rating" value="5" type="radio" onClick={(e)=>dispatch({type:'SET_RATING',payload:4})}/> 4 stars and above</label>
+            <label class="text-sm"> <input name="rating" value="4" type="radio" onClick={(e)=>dispatch({type:'SET_RATING',payload:3})}/> 3 stars and above</label>
+            <label class="text-sm"> <input name="rating" value="3" type="radio" onClick={(e)=>dispatch({type:'SET_RATING',payload:2})}/> 2 stars and above</label>
+            <label class="text-sm"> <input name="rating" value="2" type="radio" onClick={(e)=>dispatch({type:'SET_RATING',payload:1})}/> 1 star and above</label>
           </div>
           <h5 class="filter-heading">Sort by</h5>
           <div class="filter-container">

@@ -12,7 +12,7 @@ const ProductCard = ({item}) => {
         <p class="card__text-secondary">20% off</p>
       </div>
       <div class="card__text-wrapper-2">
-        <span>4.4</span>
+        <span>{item.rating}</span>
         <span><i class="fa fa-star"></i></span>
       </div>
       <div class="card__footer flex-hz">

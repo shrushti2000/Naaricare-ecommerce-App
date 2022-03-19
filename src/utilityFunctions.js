@@ -19,6 +19,13 @@ export const getSortedData=(data,sortType)=>{
     return data;
 }
 
+export const getRatingSortedData=(data,rating)=>{
+    if(rating!==0){
+        return data.filter(item=>item.rating>=rating)
+    }
+    return data
+}
+
 export const getFilteredData = (data, state) => {
     console.log('filter data')
     let filteredData = [...data];
