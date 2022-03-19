@@ -1,16 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright&family=Inter:wght@300&family=Petemoss&display=swap');
-html{
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright&family=Inter:wght@300&family=Petemoss&display=swap");
+html {
   font-size: 62.5%;
 }
-body{
+body {
   overflow-y: auto;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
-:root{
-  --primary-bg-color:#E2C2B9;
-  --secondary-bg-color:#694E4E;
-  --primary-text-color:#694E4E;
-  --secondary-text-color:#99A799;
-  --black:#323232;
-  --white:#ffffff;
+:root {
+  --primary-bg-color: #e2c2b9;
+  --secondary-bg-color: #694e4e;
+  --primary-text-color: #694e4e;
+  --secondary-text-color: #99a799;
+  --black: #323232;
+  --white: #ffffff;
+  --grey:#BEBEBE
+}
+.jc-sa {
+  justify-content: space-around;
+}
+.jc-sb {
+  justify-content: space-between;
 }

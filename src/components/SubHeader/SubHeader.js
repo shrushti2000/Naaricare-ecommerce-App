@@ -49,7 +49,7 @@ const SubHeader = () => {
                     </div>
                 </div>
                 <div className='subheader-section'>
-                    <Link to="/productlistingpage"><h5 className='subheader-title'>All Products</h5></Link>
+                    <Link to="/productlistingpage" className='links'><h5 className='subheader-title'>All Products</h5></Link>
                 </div>
             </div>
         </>
