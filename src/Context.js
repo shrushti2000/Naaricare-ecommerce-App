@@ -14,7 +14,7 @@ const Context = ({children}) => {
         rating:0,
         sortByFilters:{
             sortByCategory:[],
-            
+            sortByBrands:[]
         },
         subCategory:null
     })

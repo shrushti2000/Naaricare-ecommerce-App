@@ -32,6 +32,9 @@ export const getFilteredData = (data, state,dispatch) => {
     if (state.sortByFilters.sortByCategory.length !== 0) {
         filteredData = filteredData.filter(item => state.sortByFilters.sortByCategory.includes(item.categoryName))
     }
+    if (state.sortByFilters.sortByBrands.length !== 0) {
+        filteredData = filteredData.filter(item => state.sortByFilters.sortByBrands.includes(item.brand))
+    }
     // if (state.sortByFilters.sortBySubCategory.length !== 0) {
     //     filteredData = filteredData.filter(item => state.sortByFilters.sortBySubCategory.includes(item.subCategoryName))
     // }

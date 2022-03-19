@@ -5,7 +5,9 @@ import Carousel from '../../components/Carousel/Carousel'
 import brandImage1 from '../../assets/Images/loreal_logo.jpg'
 import brandImage2 from '../../assets/Images/lakme_logo.jpg'
 import brandImage4 from '../../assets/Images/maybelline_logo.png'
-import brandImage5 from '../../assets/Images/Wishper_logo.png'
+import brandImage5 from '../../assets/Images/mamaearth-logo.jpg'
+import brandImage6 from '../../assets/Images/wow-logo.png'
+import brandImage7 from '../../assets/Images/Wishper_logo.png'
 import offerImage1 from '../../assets/Images/offerImage1.jpg'
 import offerImage2 from '../../assets/Images/offerImage2.jpg'
 import { Link } from 'react-router-dom'
@@ -42,12 +44,15 @@ const HomePage = () => {
         <img className="offer-img" src={offerImage1} alt="offer-img-1"/>
         <img className="offer-img" src={offerImage2} alt="offer-img-2"/>
       </div>
-      <h3 className='sub-heading'>Featured Brands</h3>
+      <h3 className='sub-heading'>Featured Top Brands</h3>
       <div className='brands-section'>
-        <img className='brand-img' src={brandImage1} alt="brand-img"/>
-        <img className='brand-img' src={brandImage2} alt="brand-img"/>
-        <img className='brand-img' src={brandImage4} alt="brand-img"/>
-        <img className='brand-img' src={brandImage5} alt="brand-img"/>
+        <Link to="/productlistingpage"><img className='brand-img' src={brandImage1} alt="brand-img" onClick={(e) => dispatch({ type: 'SET_BRAND', payload: "L'Oreal" }, dispatch({ type: 'SET_SUB_CATEGORY', payload: null }))}/></Link>
+        <Link to="/productlistingpage"><img className='brand-img' src={brandImage2} alt="brand-img" onClick={(e) => dispatch({ type: 'SET_BRAND', payload: "Lakme" }, dispatch({ type: 'SET_SUB_CATEGORY', payload: null }))} /></Link>
+        <Link to="/productlistingpage"><img className='brand-img' src={brandImage4} alt="brand-img" onClick={(e) => dispatch({ type: 'SET_BRAND', payload: "Maybelline" }, dispatch({ type: 'SET_SUB_CATEGORY', payload: null }))} /></Link>
+        <Link to="/productlistingpage"><img className='brand-img' src={brandImage7} alt="brand-img" onClick={(e) => dispatch({ type: 'SET_BRAND', payload: "Whisper" }, dispatch({ type: 'SET_SUB_CATEGORY', payload: null }))}/></Link>
+        <Link to="/productlistingpage"><img className='brand-img' src={brandImage5} alt="brand-img" onClick={(e) => dispatch({ type: 'SET_BRAND', payload: "Mamaearth" }, dispatch({ type: 'SET_SUB_CATEGORY', payload: null }))} /></Link>
+        <Link to="/productlistingpage"><img className='brand-img' src={brandImage6} alt="brand-img" onClick={(e) => dispatch({ type: 'SET_BRAND', payload: "Wow" }, dispatch({ type: 'SET_SUB_CATEGORY', payload: null }))}/></Link>
+      
       </div>
       <Footer />
     </>
