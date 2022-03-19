@@ -31,10 +31,11 @@ const ProductListingPage = () => {
       <div class="product-page-container">
         <Sidebar />
         <div class="product-display-container">
-          <h2 class="sub-heading">Showing all Products</h2>
+          {filteredData.length===0 ?<> <h2 class="sub-heading">No products found!</h2></>:<> <h2 class="sub-heading">Showing all Products</h2>
           <div class="product-container">
             {filteredData.map(item => <ProductCard item={item} />)}
-          </div>
+          </div></>}
+         
         </div>
       </div>
     </>

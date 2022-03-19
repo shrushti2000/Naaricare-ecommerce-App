@@ -61,8 +61,8 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "LAKMÉ 9 to 5 Primer + Matte Lip Color.",
-    desc: '8 - 12 hours long stay.Comfortable matte finish; In built primer.Smooth and comfortable application.',
+    name: "LAKMÉ 9 to 5 Primer + Matte Lip Color.Super Matte",
+    desc: '8 - 12 hours long stay.Comfortable matte finish; In built primer.Smooth and comfortable application.Matte Finish, MR20 Ruby Rush, 3.6 g,Gives intense matte finish.LogLasting.',
     info: " Matte Finish, MR20 Ruby Rush, 3.6 g,Gives intense matte finish.LogLasting.",
     img: LakmeLipstick,
     price: 250,
@@ -80,7 +80,8 @@ export const products = [
   {
     _id: uuid(),
     name: "Lakmé Absolute Spotlight Eye Shadow Palette, Berry Martini, 12 g",
-    desc: 'Highly pigmented with intense colour payoff.Ultra-rich velvety textures for a superior finish',
+    desc: 'Highly pigmented with intense colour payoff.Ultra-rich velvety textures for a superior finish. Good pigmentation and coverage',
+    info:"Highly pigmented with intense colour payoff.Ultra-rich velvety textures for a superior finish",
     img: EyeshadowPalette,
     price: 319,
     categoryName: "Makeup",
@@ -97,7 +98,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Lakmé Color Crush Nailart, U4, 6ml",
-    desc: ' Lakme Absolute Skin Natural Mousse gives amazing matte finish and look.',
+    desc: ' Lakme Absolute Skin Natural Mousse gives amazing matte finish and look.Shades highlight each texture.Extremely Matte .Long lasting',
     info: "Shades highlight each texture.Gives Matte look and is long lasting.",
     img: LakmeNailPolish,
     price: 124,
@@ -115,7 +116,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Lakme Absolute Skin Natural Mousse",
-    desc: 'Spf 8.Feather-light texture.Stays up to 16 hours.Keeps your skin healthy and protected',
+    desc: 'Spf 8.Feather-light texture.Stays up to 16 hours.Keeps your skin healthy and protected. Long Lasting Weightless Full Coverage. 25g.Feather-light texture',
     info: "Ivory Fair 01, SPF 8 Natural Finish Matte Cream Foundation -Long Lasting Weightless Full Coverage Face Makeup, 25g.Feather-light texture.Stays up to 16 hour.Keeps your skin healthy and protected",
     img: LakmeFoundation,
     price: 742,
@@ -132,8 +133,9 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Maybelline New York Fit Me Foundation 115 and Fit Me Concealer 10, Nude, 39 g (Pack of 2)",
-    desc: 'Fit me fits skin tone and texture to give flawless natural finish.Combo pack, foundation and concealer, to ace your face make up',
+    name: "Maybelline New York Fit Me Foundation 39 g (Pack of 2)",
+    desc: 'Fit me fits skin tone and texture to give flawless natural finish.Combo pack.',
+    info:"foundation and concealer, to ace your face make up",
     img: MaybellineFoundation,
     price: 787,
     categoryName: "Makeup",
@@ -150,8 +152,8 @@ export const products = [
   {
     _id: uuid(),
     name: "SUGAR Cosmetics - Matte Attack - Transferproof Lipstick",
-    desc: 'Start off with Creamy formula, sets to complete Matte',
-    info: "The Grandberries (Dark Berry) - 2 gms - Transferproof Lipstick Matte Finish, Lasts Up to 8 hours.Lasts upto 8 Hours.Start off with Creamy formula, sets to complete Matte.High Pigmentation.Enriched with Jojoba Oil and Vitamine.Non Drying and Zero Feathering Formula",
+    desc: 'Start off with Creamy formula, sets to complete Matte,Lasts Up to 8 hours. Creamy formula.',
+    info: "The Grandberries (Dark Berry) - 2 gms - Transferproof Lipstick Matte Finish, Lasts upto 8 Hours.Start off with Creamy formula, sets to complete Matte.High Pigmentation.Enriched with Jojoba Oil and Vitamine.Non Drying and Zero Feathering Formula",
     img: sugarMatteLipstick,
     price: 629,
     categoryName: "Makeup",
@@ -168,7 +170,7 @@ export const products = [
   {
     _id: uuid(),
     name: "SUGAR Cosmetics - All Set To Go - Banana Powder",
-    desc: 'A setting powder that suits all skin tones',
+    desc: 'A setting powder that suits all skin tones. Gives fresh look. Suitable for all skin types and long lasting',
     info: "Setting Powder for Mattified Skin.Suits all skin types.Long lasting.",
     img: sugarbananapowder,
     price: 569,
@@ -186,7 +188,7 @@ export const products = [
   {
     _id: uuid(),
     name: "POND'S Super Light Gel Oil Free Face Moisturizer 73g",
-    desc: 'Super lightweight and non-oily gel formula. Paraben Free : Yes',
+    desc: 'Super lightweight and non-oily gel formula. Paraben Free : Yes  Glowing Skin & 24 hr Hydration - Daily Use.',
     info: ", With Hyaluronic Acid & Vitamin E for Fresh Glowing Skin & 24 hr Hydration - Daily Use.",
     img: PondsMoisturizer,
     price: 150,
@@ -258,8 +260,8 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Lakme Absolute Perfect Radiance Brightening Day Crème (Cream)",
-    desc: 'Gives a fairer and illuminated look; Brightens the skin tone',
+    name: "Lakme Absolute Perfect Radiance Brightening day cream",
+    desc: 'Gives a fairer and illuminated look; Brightens the skin tone.Covers blackheads and pores. Illuminates face instantly.',
     info: "Contains with Niacinamide & Micro crystals 50g.Longlasting",
     img: LakmeFaceCream,
     price: 250,
@@ -277,7 +279,7 @@ export const products = [
   , {
     _id: uuid(),
     name: "Whisper Ultra Soft Sanitary Pads For Women",
-    desc: 'Airy freshness for irritation free feel.500 airfresh pores',
+    desc: 'Airy freshness for irritation free feel.500 airfresh pores.  X-Large Pack of 50 Napkins.Gives comfort.',
     info: " X-Large Pack of 50 Napkins.Gives comfort.",
     img: Whisperpads,
     price: 300,
@@ -330,8 +332,8 @@ export const products = [
   {
     _id: uuid(),
     name: "Mamaearth Almond Shampoo.",
-    desc: 'PROMOTES HEALTHY HAIR GROWTH: Get stronger and longer hair with Mamaearth Almond Shampoo, enriched with the natural goodness of cold pressed Almond Oil, Vitamin E and wheat amino acids.',
-    info: "Promotes hair groth.Stops hairfall and dandruff.",
+    desc: 'PROMOTES HEALTHY HAIR GROWTH: Get stronger and longer hair with Mamaearth Almond Shampoo, enriched with the natural goodness of cold pressed Almond Oil,',
+    info: "Promotes hair groth.Stops hairfall and dandruff. Vitamin E and wheat amino acids.",
     img: Mamaearth,
     price: 2730,
     categoryname: "Haircare",
@@ -401,7 +403,8 @@ export const products = [
   }, {
     _id: uuid(),
     name: "Mamaearth Vitamin C Body Lotion",
-    desc: 'Vitamin C promotes even complexion and has anti-aging benefits. Honey soothes, hydrates, and reduces dullness. Daily use of the body lotion restores the skin’s suppleness.',
+    desc: 'Vitamin C promotes even complexion and has anti-aging benefits. Honey soothes, hydrates, and reduces dullness.',
+    info:" Daily use of the body lotion restores the skin’s suppleness.",
     img: mamaearthbodylotion,
     price: 300,
     categoryName: "Bodycare",
@@ -417,7 +420,7 @@ export const products = [
   }, {
     _id: uuid(),
     name: "NIVEA Body Wash, Fresh Powerfruit Shower Gel",
-    desc: 'Contains Antioxidants & Blueberry Scent, 250 ml',
+    desc: 'Contains Antioxidants & Blueberry Scent, 250 ml  Nourishes body and gives a fresh feel. Extremely soothing.',
     info: "Nourishes body and gives a fresh feel. Extremely soothing.",
     img: niveaBodyWash,
     price: 150,

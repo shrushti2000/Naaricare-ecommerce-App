@@ -13,6 +13,7 @@ body {
   --secondary-text-color: #99a799;
   --black: #323232;
   --white: #ffffff;
+  --grey:#BEBEBE
 }
 .jc-sa {
   justify-content: space-around;
