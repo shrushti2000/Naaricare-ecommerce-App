@@ -10,18 +10,18 @@ export const getPriceRangedData = (data, priceRange) => {
     return data;
 }
 
-export const getSortedData=(data,sortType)=>{
-    if(sortType==="low-to-high"){
-        return data.sort((a,b)=>a['price']-b['price'])
-    }else if(sortType==="high-to-low"){
-        return data.sort((a,b)=>b['price']-a['price'])
+export const getSortedData = (data, sortType) => {
+    if (sortType === "low-to-high") {
+        return data.sort((a, b) => a['price'] - b['price'])
+    } else if (sortType === "high-to-low") {
+        return data.sort((a, b) => b['price'] - a['price'])
     }
     return data;
 }
 
-export const getRatingSortedData=(data,rating)=>{
-    if(rating!==0){
-        return data.filter(item=>item.rating>=rating)
+export const getRatingSortedData = (data, rating) => {
+    if (rating !== 0) {
+        return data.filter(item => item.rating >= rating)
     }
     return data
 }
@@ -29,8 +29,8 @@ export const getRatingSortedData=(data,rating)=>{
 export const getFilteredData = (data, state) => {
     console.log('filter data')
     let filteredData = [...data];
-    if(state.sortByFilters.sortByCategory.length!==0){
-        filteredData=filteredData.filter(item=>state.sortByFilters.sortByCategory.includes(item.categoryName))
+    if (state.sortByFilters.sortByCategory.length !== 0) {
+        filteredData = filteredData.filter(item => state.sortByFilters.sortByCategory.includes(item.categoryName))
     }
     return filteredData;
 }

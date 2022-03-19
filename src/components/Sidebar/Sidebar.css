@@ -44,3 +44,10 @@ input[type="checkbox"] {
   border-radius: 10px;
   cursor: pointer;
 }
+
+.clear-all{
+  cursor: pointer;
+}
+.clear-all:hover{
+  color: var(--primary-text-color);
+}

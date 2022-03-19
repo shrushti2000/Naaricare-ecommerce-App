@@ -21,7 +21,7 @@ const ProductListingPage = () => {
       }
     };
     fetchData();
-  }, [])
+  }, [state])
   const sortedData = getSortedData(state.products, state.sortBy)
   const priceRangedData = getPriceRangedData(sortedData, state.priceRange)
   const ratingSortedData=getRatingSortedData(priceRangedData,state.rating)
