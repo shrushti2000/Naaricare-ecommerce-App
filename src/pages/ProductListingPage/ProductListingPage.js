@@ -16,7 +16,7 @@ const ProductListingPage = () => {
         const res = await fetch('/api/products', { method: "GET" })
         const data = await res.json()
         dispatch({ type: 'SET_PRODUCTS', payload: data.products })
-      } catch (e) {
+        } catch (e) {
         console.log(e)
       }
     };
