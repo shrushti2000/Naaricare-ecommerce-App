@@ -26,11 +26,11 @@ const Sidebar = () => {
           </div>
           <h5 class="filter-heading">Category</h5>
           <div class="filter-container">
-            <label class="text-sm"> <input type="checkbox" name="category" checked={state.sortByFilters.sortByCategory.includes("Makeup")} onChange={(e) => dispatch({ type: 'SET_CATEGORY', payload: "Makeup" })} />Make up</label>
-            <label class="text-sm"> <input type="checkbox" name="category" checked={state.sortByFilters.sortByCategory.includes("Skincare")} onChange={(e) => dispatch({ type: 'SET_CATEGORY', payload: "Skincare" })} />Skin Care</label>
-            <label class="text-sm"> <input type="checkbox" name="category" checked={state.sortByFilters.sortByCategory.includes("Bodycare")} onChange={(e) => dispatch({ type: 'SET_CATEGORY', payload: "Bodycare" })} />Body Care</label>
-            <label class="text-sm"> <input type="checkbox" name="category" checked={state.sortByFilters.sortByCategory.includes("MenstrualHygiene")} onChange={(e) => dispatch({ type: 'SET_CATEGORY', payload: "MenstrualHygiene" })} />Menstrual Hygiene</label>
-            <label class="text-sm"> <input type="checkbox" name="category" checked={state.sortByFilters.sortByCategory.includes("Haircare")} onChange={(e) => dispatch({ type: 'SET_CATEGORY', payload: "Haircare" })} />Hair Care</label>
+            <label class="text-sm"> <input type="checkbox" name="category" checked={state.sortByFilters.sortByCategory.includes("Makeup")} onChange={(e) => dispatch({ type: 'SET_CATEGORY', payload: "Makeup" }  ,dispatch({type:'SET_SUB_CATEGORY',payload:null}))} />Make up</label>
+            <label class="text-sm"> <input type="checkbox" name="category" checked={state.sortByFilters.sortByCategory.includes("Skincare")} onChange={(e) => dispatch({ type: 'SET_CATEGORY', payload: "Skincare" }, dispatch({type:'SET_SUB_CATEGORY',payload:null}))} />Skin Care</label>
+            <label class="text-sm"> <input type="checkbox" name="category" checked={state.sortByFilters.sortByCategory.includes("Bodycare")} onChange={(e) => dispatch({ type: 'SET_CATEGORY', payload: "Bodycare" },dispatch({type:'SET_SUB_CATEGORY',payload:null}))} />Body Care</label>
+            <label class="text-sm"> <input type="checkbox" name="category" checked={state.sortByFilters.sortByCategory.includes("MenstrualHygiene")} onChange={(e) => dispatch({ type: 'SET_CATEGORY', payload: "MenstrualHygiene" },dispatch({type:'SET_SUB_CATEGORY',payload:null}))} />Menstrual Hygiene</label>
+            <label class="text-sm"> <input type="checkbox" name="category" checked={state.sortByFilters.sortByCategory.includes("Haircare")} onChange={(e) => dispatch({ type: 'SET_CATEGORY', payload: "Haircare" },dispatch({type:'SET_SUB_CATEGORY',payload:null}))} />Hair Care</label>
           </div>
           <h5 class="filter-heading">Rating</h5>
           <div class="filter-container">

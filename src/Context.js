@@ -13,8 +13,10 @@ const Context = ({children}) => {
         priceRange:0,
         rating:0,
         sortByFilters:{
-            sortByCategory:[]
-        }
+            sortByCategory:[],
+            
+        },
+        subCategory:null
     })
 
   return (
