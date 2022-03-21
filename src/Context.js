@@ -8,12 +8,15 @@ export const StateContext=createContext();
 const Context = ({children}) => {
     const [state,dispatch]=useReducer(stateReducer,{
         products:[],
+        categories:[],
         sortBy:null,
         priceRange:0,
         rating:0,
         sortByFilters:{
-            sortByCategory:[]
-        }
+            sortByCategory:[],
+            sortByBrands:[]
+        },
+        subCategory:null
     })
 
   return (

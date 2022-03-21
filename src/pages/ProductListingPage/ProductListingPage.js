@@ -16,7 +16,7 @@ const ProductListingPage = () => {
         const res = await fetch('/api/products', { method: "GET" })
         const data = await res.json()
         dispatch({ type: 'SET_PRODUCTS', payload: data.products })
-      } catch (e) {
+        } catch (e) {
         console.log(e)
       }
     };
@@ -25,9 +25,10 @@ const ProductListingPage = () => {
   const sortedData = getSortedData(state.products, state.sortBy)
   const priceRangedData = getPriceRangedData(sortedData, state.priceRange)
   const ratingSortedData=getRatingSortedData(priceRangedData,state.rating)
-  const filteredData = getFilteredData(ratingSortedData, state)
+  const filteredData = getFilteredData(ratingSortedData, state,dispatch)
   return (
     <>
+    
       <div class="product-page-container">
         <Sidebar />
         <div class="product-display-container">

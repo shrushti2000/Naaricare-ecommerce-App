@@ -26,11 +26,22 @@ export const getRatingSortedData = (data, rating) => {
     return data
 }
 
-export const getFilteredData = (data, state) => {
+export const getFilteredData = (data, state,dispatch) => {
     console.log('filter data')
     let filteredData = [...data];
     if (state.sortByFilters.sortByCategory.length !== 0) {
         filteredData = filteredData.filter(item => state.sortByFilters.sortByCategory.includes(item.categoryName))
     }
+    if (state.sortByFilters.sortByBrands.length !== 0) {
+        filteredData = filteredData.filter(item => state.sortByFilters.sortByBrands.includes(item.brand))
+    }
+    // if (state.sortByFilters.sortBySubCategory.length !== 0) {
+    //     filteredData = filteredData.filter(item => state.sortByFilters.sortBySubCategory.includes(item.subCategoryName))
+    // }
+    if(state.subCategory!==null){
+        filteredData=filteredData.filter(item=>item.subCategoryName===state.subCategory)
+       
+    }
+   
     return filteredData;
 }
