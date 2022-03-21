@@ -13,6 +13,7 @@ const Header = () => {
         <i class="fa fa-bars"></i>
         <Searchbar />
         <div class="navigation-item-3 flex-hz">
+          <Link className='links' to="/signup"><button class="btn btn-primary">Signup</button></Link>
           <button class="btn btn-primary">Login</button>
           <i className="fa fa-shopping-cart"><span class="badge-w-icon">1</span></i>
           <i class="fa fa-heart"><span class="badge-w-icon">10</span></i>

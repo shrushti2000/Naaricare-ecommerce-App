@@ -2,10 +2,12 @@
 html {
   font-size: 62.5%;
 }
+
 body {
   overflow-y: auto;
   font-family: "Inter", sans-serif;
 }
+
 :root {
   --primary-bg-color: #e2c2b9;
   --secondary-bg-color: #694e4e;
@@ -13,11 +15,14 @@ body {
   --secondary-text-color: #99a799;
   --black: #323232;
   --white: #ffffff;
-  --grey:#BEBEBE
+  --grey:#BEBEBE;
+  --light-grey:#D0D0D0;
 }
+
 .jc-sa {
   justify-content: space-around;
 }
+
 .jc-sb {
   justify-content: space-between;
 }
