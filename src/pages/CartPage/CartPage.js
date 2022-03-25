@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useContext } from 'react'
 import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount, removeFromCart, updateProductQty } from '../../CartServices'
 import { StateContext } from '../../Context'
+import './CartPage.css'
 
 const CartPage = () => {
   const encodedToken = localStorage.getItem('token')
@@ -56,7 +57,7 @@ const CartPage = () => {
                       <p class="card__text-primary">Quantity : </p>
                       <span class="flex-hz"><i class="fa fa-plus card-icon-plus" onClick={(e) => updateProductQty(item._id, encodedToken, dispatch, "increment")}></i>
                         <p class="card-text">{item.qty}</p>
-                        <i class="fa fa-minus card-icon-plus" onClick={(e) => item.qty >= 1 && updateProductQty(item._id, encodedToken, dispatch, "decrement")}></i>
+                        <i class="fa fa-minus card-icon-plus" onClick={(e) => item.qty > 1 && updateProductQty(item._id, encodedToken, dispatch, "decrement")}></i>
                       </span>
                     </div>
                     <div class="card-footer flex-hz">
