@@ -12,7 +12,7 @@ const Signup = () => {
     const [password,setPassword]=useState('')
     let navigate = useNavigate();
     const signupHandler = async (e) => {
-       
+       e.preventDefault();
         try {
           const response = await axios.post(`/api/auth/signup`, {
             firstName,
@@ -21,9 +21,9 @@ const Signup = () => {
             password,
           })
           console.log(response)
-          if(response.status===201){
-            localStorage.setItem("token", response.data.encodedToken);
+           if(response.status===201){
             navigate('/signin')
+          
           }
          } catch (error) {
           console.log(error);

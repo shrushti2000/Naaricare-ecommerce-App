@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const getPriceRangedData = (data, priceRange) => {
     const [startValue, endValue] = priceRange.toString().split('-')
     if (priceRange !== 0) {
@@ -45,3 +47,4 @@ export const getFilteredData = (data, state,dispatch) => {
    
     return filteredData;
 }
+
