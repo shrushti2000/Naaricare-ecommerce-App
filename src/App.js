@@ -5,6 +5,7 @@ import SubHeader from "./components/SubHeader/SubHeader";
 import TopBar from "./components/TopBar/TopBar";
 import HomePage from "./pages/HomePage/HomePage";
 import ProductListingPage from "./pages/ProductListingPage/ProductListingPage";
+import Signin from "./pages/Signin/Signin";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage/>} />
         <Route exact path="/productlistingpage" element={<ProductListingPage/>}/>
+        <Route exact path="/signin" element={<Signin/>}/>
       </Routes>
     </>
   );
