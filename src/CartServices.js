@@ -36,15 +36,30 @@ export const updateProductQty = async (id, encodedToken, dispatch, actionType) =
     }
 }
 
-export const  findPriceOfAllItems=(cart)=>{
-    
-  const totalPrice= cart.reduce((acc,curr)=>{
-       acc=acc+curr.price*curr.qty 
-       console.log(acc)
-       return acc
-       
-   },0)
-   return totalPrice;
+export const findPriceOfAllItems = (cart) => {
 
+    const totalPrice = cart.reduce((acc, curr) => {
+        acc = acc + curr.price * curr.qty
+        return acc
+
+    }, 0)
+    return totalPrice;
+
+}
+
+export const findTotalDiscount = (cart) => {
+
+    const totalDiscount = cart.reduce((acc, curr) => {
+        acc = acc + ((curr.discount / 100) * curr.price) * curr.qty
+        return acc
+
+    }, 0)
+
+    return totalDiscount;
+
+}
+
+export const calculateFinalCartPrice = (totalPrice, totalDiscount, DeliveryCharges) => {
+    return totalPrice - totalDiscount + DeliveryCharges
 }
 

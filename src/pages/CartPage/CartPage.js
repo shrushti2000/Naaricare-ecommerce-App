@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react'
-import { findPriceOfAllItems, updateProductQty } from '../../CartServices'
+import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount, updateProductQty } from '../../CartServices'
 import { StateContext } from '../../Context'
 
 const CartPage = () => {
@@ -26,27 +26,12 @@ const CartPage = () => {
       }
     };
     fetchData();
-  }, [])
-
-  async function removeFromCart(id) {
-    try {
-      const {
-        data: { cart },
-      } = await axios.delete(`api/user/cart/${id}`, {
-        headers: {
-          authorization: encodedToken,
-        },
-      });
-      dispatch({ type: 'SET_CART', payload: cart })
-
-    } catch (error) {
-
-      console.log("Error in updateQtyFromCart service", error);
-    }
-  }
+  }, [state])
 
   const totalPrice = findPriceOfAllItems(state.cart)
-
+  const totalDiscount = findTotalDiscount(state.cart)
+  const finalCartPrice = calculateFinalCartPrice(totalPrice, totalDiscount, 50)
+  console.log(totalDiscount)
   return (
     <>
       <h5 class="sub-heading">My Cart</h5>
@@ -78,7 +63,7 @@ const CartPage = () => {
                       <button class="btn btn-primary card__btn-primary">
                         ADD TO CART
                       </button>
-                      <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id)}>
+                      <button class="btn btn-outline-primary card__btn-secondary">
                         REMOVE FROM WISHLIST
                       </button>
                     </div>
@@ -96,15 +81,15 @@ const CartPage = () => {
           </div>
           <div class="price-wrapper flex-hz">
             <p class="text-sm">Discount</p>
-            <p class="text-sm">- Rs 1999</p>
+            <p class="text-sm">- Rs {totalDiscount}</p>
           </div>
           <div class="price-wrapper flex-hz">
             <p class="text-sm">Delivery Charges</p>
-            <p class="text-sm">Rs 499</p>
+            <p class="text-sm">Rs 50</p>
           </div>
           <div class="price-wrapper flex-hz">
             <h4 class="font-weight-bold">TOTAL AMOUNT</h4>
-            <p class="text-sm">Rs </p>
+            <p class="text-sm">Rs {finalCartPrice}</p>
           </div>
           <p class="text-sm">You will save Rs 1999 on this order</p>
           <button class="btn btn-primary">PLACE ORDER</button>
