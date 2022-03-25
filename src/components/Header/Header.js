@@ -13,8 +13,8 @@ const Header = () => {
         <i class="fa fa-bars"></i>
         <Searchbar />
         <div class="navigation-item-3 flex-hz">
-         <Link to="/signin"> <button class="btn btn-primary">Login</button></Link>
-          <i className="fa fa-shopping-cart"><span class="badge-w-icon">1</span></i>
+          <Link to="/signin"> <button class="btn btn-primary">Login</button></Link>
+          <Link to="/cartpage"><i className="fa fa-shopping-cart"><span class="badge-w-icon">1</span></i></Link>
           <i class="fa fa-heart"><span class="badge-w-icon">10</span></i>
           <i class="fa fa-search search-icon-responsive"></i>
         </div>

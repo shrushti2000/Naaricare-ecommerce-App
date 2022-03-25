@@ -29,6 +29,7 @@ const stateReducer = (state, action) => {
             },
             subCategory: null
         }
+        case 'SET_CART':return {...state,cart:action.payload}
         default: return state
     }
 

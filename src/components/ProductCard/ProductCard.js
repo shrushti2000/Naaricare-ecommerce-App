@@ -1,7 +1,10 @@
 import React from 'react'
+import { addToCart } from '../../CartServices'
 import './ProductCard.css'
 
 const ProductCard = ({item}) => {
+  const encodedToken = localStorage.getItem("token")
+
   
   return (
     <div class="card__container flex-vt">
@@ -18,7 +21,7 @@ const ProductCard = ({item}) => {
       </div>
       <div class="card__footer flex-hz">
         <div><i class="fa fa-heart card__icon"></i></div>
-        <button class="btn btn-primary card__btn-primary">ADD TO CART</button>
+        <button class="btn btn-primary card__btn-primary" onClick={()=>addToCart(item,encodedToken)}>ADD TO CART</button>
       </div>
     </div>
   )
