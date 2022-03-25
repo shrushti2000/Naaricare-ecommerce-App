@@ -8,7 +8,27 @@ import { getFilteredData, getPriceRangedData, getRatingSortedData, getSortedData
 import './ProductListingPage.css'
 
 const ProductListingPage = () => {
+  const encodedToken = localStorage.getItem('token')
   const { state, dispatch } = useContext(StateContext)
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch('/api/user/cart', {
+          method: "GET", headers: {
+            "authorization": encodedToken,
+            "Content-type": "application/json; charset=UTF-8"
+          }
+        })
+        const data = await res.json()
+
+        dispatch({ type: 'SET_CART', payload: data.cart })
+
+      } catch (e) {
+        console.log(e)
+      }
+    };
+    fetchData();
+  }, [state.cart])
 
   useEffect(() => {
     async function fetchData() {

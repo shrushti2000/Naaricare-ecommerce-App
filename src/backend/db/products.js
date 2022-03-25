@@ -56,6 +56,7 @@ export const products = [
     brand: "Maybelline",
     inStock: "true",
     fastDelivery: "true",
+    discount: 20,
     rating: 3,
     offer: "false",
     avalQty: 10,

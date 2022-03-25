@@ -1,6 +1,7 @@
 import axios from 'axios'
 export const addToCart = (item, encodedToken) => {
-    console.log('under item', item)
+  
+   try{
     fetch("/api/user/cart", {
         method: "POST",
         body: JSON.stringify({ product: item }),
@@ -11,6 +12,9 @@ export const addToCart = (item, encodedToken) => {
     })
         .then(res => res.json())
         .then(data => console.log(data))
+   }catch(error){
+       console.log(error)
+   }
 }
 
 export const updateProductQty = async (id, encodedToken, dispatch, actionType) => {
@@ -72,7 +76,7 @@ export const findTotalDiscount = (cart) => {
 
     }, 0)
 
-    return totalDiscount;
+    return totalDiscount.toFixed(2);
 
 }
 

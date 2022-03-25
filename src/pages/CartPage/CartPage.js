@@ -9,30 +9,10 @@ import './CartPage.css'
 const CartPage = () => {
   const encodedToken = localStorage.getItem('token')
   const { state, dispatch } = useContext(StateContext)
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch('/api/user/cart', {
-          method: "GET", headers: {
-            "authorization": encodedToken,
-            "Content-type": "application/json; charset=UTF-8"
-          }
-        })
-        const data = await res.json()
-
-        dispatch({ type: 'SET_CART', payload: data.cart })
-
-      } catch (e) {
-        console.log(e)
-      }
-    };
-    fetchData();
-  }, [state])
-
   const totalPrice = findPriceOfAllItems(state.cart)
   const totalDiscount = findTotalDiscount(state.cart)
   const finalCartPrice = calculateFinalCartPrice(totalPrice, totalDiscount, 50)
-  console.log(totalDiscount)
+  
   return (
     <>
       <h5 class="sub-heading">My Cart</h5>

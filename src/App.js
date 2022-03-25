@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import SubHeader from "./components/SubHeader/SubHeader";
+
 import TopBar from "./components/TopBar/TopBar";
 import CartPage from "./pages/CartPage/CartPage";
 import HomePage from "./pages/HomePage/HomePage";
@@ -18,7 +19,7 @@ function App() {
         <Route exact path="/productlistingpage" element={<ProductListingPage/>}/>
         <Route exact path="/signin" element={<Signin/>}/>
         <Route exact path="/cartpage" element={<CartPage/>}/>
-      </Routes>
+       </Routes>
     </>
   );
 }
