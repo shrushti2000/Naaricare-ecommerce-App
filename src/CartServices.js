@@ -35,3 +35,16 @@ export const updateProductQty = async (id, encodedToken, dispatch, actionType) =
         console.log("Error in updateQtyFromCart service", error);
     }
 }
+
+export const  findPriceOfAllItems=(cart)=>{
+    
+  const totalPrice= cart.reduce((acc,curr)=>{
+       acc=acc+curr.price*curr.qty 
+       console.log(acc)
+       return acc
+       
+   },0)
+   return totalPrice;
+
+}
+
