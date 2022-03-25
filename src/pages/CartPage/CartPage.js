@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react'
-import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount, updateProductQty } from '../../CartServices'
+import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount, removeFromCart, updateProductQty } from '../../CartServices'
 import { StateContext } from '../../Context'
 
 const CartPage = () => {
@@ -63,8 +63,8 @@ const CartPage = () => {
                       <button class="btn btn-primary card__btn-primary">
                         ADD TO CART
                       </button>
-                      <button class="btn btn-outline-primary card__btn-secondary">
-                        REMOVE FROM WISHLIST
+                      <button class="btn btn-outline-primary card__btn-secondary" onClick={(e)=>removeFromCart(item._id,encodedToken,dispatch)}>
+                        REMOVE FROM CART
                       </button>
                     </div>
                   </div>

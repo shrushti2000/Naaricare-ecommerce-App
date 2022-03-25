@@ -36,6 +36,23 @@ export const updateProductQty = async (id, encodedToken, dispatch, actionType) =
     }
 }
 
+export const removeFromCart=async(id,encodedToken,dispatch)=> {
+    try {
+      const {
+        data: { cart },
+      } = await axios.delete(`api/user/cart/${id}`, {
+        headers: {
+          authorization: encodedToken,
+        },
+      });
+      dispatch({ type: 'SET_CART', payload: cart })
+
+    } catch (error) {
+        console.log("Error in cart service", error);
+    }
+  }
+
+
 export const findPriceOfAllItems = (cart) => {
 
     const totalPrice = cart.reduce((acc, curr) => {
