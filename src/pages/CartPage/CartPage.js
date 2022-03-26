@@ -14,8 +14,8 @@ const CartPage = () => {
   const totalDiscount = findTotalDiscount(state.cart)
   const finalCartPrice = calculateFinalCartPrice(totalPrice, totalDiscount, 50)
 
-  return (
-    <>
+   return (
+   <>
       <h5 class="sub-heading">My Cart</h5>
       <div class="cart-page-container">
         <div class="cart-items-display">

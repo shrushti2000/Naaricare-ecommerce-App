@@ -8,6 +8,7 @@ import { getFilteredData, getPriceRangedData, getRatingSortedData, getSortedData
 import './ProductListingPage.css'
 
 const ProductListingPage = () => {
+  const encodedToken = localStorage.getItem('token')
   const { state, dispatch } = useContext(StateContext)
 
   useEffect(() => {
@@ -26,6 +27,7 @@ const ProductListingPage = () => {
   const priceRangedData = getPriceRangedData(sortedData, state.priceRange)
   const ratingSortedData = getRatingSortedData(priceRangedData, state.rating)
   const filteredData = getFilteredData(ratingSortedData, state, dispatch)
+
   return (
     <>
 

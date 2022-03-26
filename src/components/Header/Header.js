@@ -4,10 +4,11 @@ import { useContext } from 'react'
 import { StateContext } from '../../Context'
 import Searchbar from '../Searchbar/Searchbar'
 import './Header.css'
+import AuthProvider from '../../AuthProvider'
 
 const Header = () => {
   const {state}=useContext(StateContext)
-  
+
   return (
     <>
       <div class="navigation-container flex-hz">
