@@ -33,26 +33,6 @@ function App() {
     fetchData();
   }, [state.cart])
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch('/api/user/wishlist', {
-          method: "GET", headers: {
-            "authorization": encodedToken,
-            "Content-type": "application/json; charset=UTF-8"
-          }
-        })
-        const data = await res.json()
-
-        dispatch({ type: 'SET_WISHLIST', payload: data.wishlist })
-
-      } catch (e) {
-        console.log(e)
-      }
-    };
-    fetchData();
-  }, [state.wishlist])
-
   return (
     <>
       <TopBar />
@@ -62,7 +42,6 @@ function App() {
         <Route exact path="/productlistingpage" element={<ProductListingPage/>}/>
         <Route exact path="/signin" element={<Signin/>}/>
         <Route exact path="/cartpage" element={<CartPage/>}/>
-        <Route exact path="/wishlistpage" element={<WishlistPage/>}/>
        </Routes>
     </>
   );
