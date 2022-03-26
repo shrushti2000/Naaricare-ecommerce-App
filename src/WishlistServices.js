@@ -1,13 +1,13 @@
 import axios from "axios";
 
-export const handleAddToWishlist=(wishlist,item,encodedToken)=>{
+export const handleAddToWishlist=(wishlist,item,encodedToken,dispatch)=>{
   const isItemPresent = wishlist.find(itemInWishlist => itemInWishlist._id === item._id)
     if (isItemPresent === undefined) {
-      addToWishlist(item, encodedToken)
+      addToWishlist(item, encodedToken,dispatch)
     }
 }
 
-export const addToWishlist = (item, encodedToken) => {
+export const addToWishlist = (item, encodedToken,dispatch) => {
    try{
     fetch("/api/user/wishlist", {
         method: "POST",
@@ -18,7 +18,7 @@ export const addToWishlist = (item, encodedToken) => {
         }
     })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data =>  dispatch({ type: 'SET_WISHLIST', payload: data.wishlist }))
    }catch(error){
        console.log(error)
    }

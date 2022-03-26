@@ -42,7 +42,7 @@ const CartPage = () => {
                       </span>
                     </div>
                     <div class="card-footer flex-hz">
-                      <button class="btn btn-primary card__btn-primary" onClick={() => handleAddToWishlist(state.wishlist, item, encodedToken)}>
+                      <button class="btn btn-primary card__btn-primary" onClick={() => handleAddToWishlist(state.wishlist, item, encodedToken,dispatch)}>
                         ADD TO WISHLIST
                       </button>
                       <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id, encodedToken, dispatch)}>

@@ -19,7 +19,7 @@ const ProductCard = ({ item }) => {
     
     if (cartButtonText === "ADD TO CART") {
       if (isItemPresent === undefined) {
-        addToCart(item, encodedToken)
+        addToCart(item, encodedToken,dispatch)
         setCartButtonText('GO TO CART')
       } else {
         const isItemPresentInWishList = state.wishlist.find(itemInWishlist => itemInWishlist._id === item._id)
@@ -48,7 +48,7 @@ const ProductCard = ({ item }) => {
       </div>
       <div class="card__footer flex-hz">
 
-      {state.wishlist.includes(item) ? <>  <div><button class="btn btn-primary card__btn-primary" onClick={()=>removeFromWishlist(item._id,encodedToken,dispatch)}>Remove</button></div></>:<>  <div><i style={{color: `${heartColor}`}} class="fa fa-heart card__icon" onClick={()=> handleAddToWishlist(state.wishlist,item, encodedToken)}></i></div></>}
+      {state.wishlist.includes(item) ? <>  <div><button class="btn btn-primary card__btn-primary" onClick={()=>removeFromWishlist(item._id,encodedToken,dispatch)}>Remove</button></div></>:<>  <div><i style={{color: `${heartColor}`}} class="fa fa-heart card__icon" onClick={()=> handleAddToWishlist(state.wishlist,item, encodedToken,dispatch)}></i></div></>}
       
         <button class="btn btn-primary card__btn-primary" onClick={handleAddTOCart}>{cartButtonText}</button>
       </div>

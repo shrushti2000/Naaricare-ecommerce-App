@@ -1,5 +1,5 @@
 import axios from 'axios'
-export const addToCart = (item, encodedToken) => {
+export const addToCart = (item, encodedToken,dispatch) => {
   
    try{
     fetch("/api/user/cart", {
@@ -11,7 +11,8 @@ export const addToCart = (item, encodedToken) => {
         }
     })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => dispatch({ type: 'SET_CART', payload: data.cart }))
+        
    }catch(error){
        console.log(error)
    }
