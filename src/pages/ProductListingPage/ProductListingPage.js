@@ -8,7 +8,27 @@ import { getFilteredData, getPriceRangedData, getRatingSortedData, getSortedData
 import './ProductListingPage.css'
 
 const ProductListingPage = () => {
+  const encodedToken = localStorage.getItem('token')
   const { state, dispatch } = useContext(StateContext)
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch('/api/user/cart', {
+          method: "GET", headers: {
+            "authorization": encodedToken,
+            "Content-type": "application/json; charset=UTF-8"
+          }
+        })
+        const data = await res.json()
+
+        dispatch({ type: 'SET_CART', payload: data.cart })
+
+      } catch (e) {
+        console.log(e)
+      }
+    };
+    fetchData();
+  }, [state.cart])
 
   useEffect(() => {
     async function fetchData() {
@@ -16,7 +36,7 @@ const ProductListingPage = () => {
         const res = await fetch('/api/products', { method: "GET" })
         const data = await res.json()
         dispatch({ type: 'SET_PRODUCTS', payload: data.products })
-      } catch (e) {
+        } catch (e) {
         console.log(e)
       }
     };
@@ -24,19 +44,19 @@ const ProductListingPage = () => {
   }, [state])
   const sortedData = getSortedData(state.products, state.sortBy)
   const priceRangedData = getPriceRangedData(sortedData, state.priceRange)
-  const ratingSortedData = getRatingSortedData(priceRangedData, state.rating)
-  const filteredData = getFilteredData(ratingSortedData, state, dispatch)
+  const ratingSortedData=getRatingSortedData(priceRangedData,state.rating)
+  const filteredData = getFilteredData(ratingSortedData, state,dispatch)
   return (
     <>
-
+    
       <div class="product-page-container">
         <Sidebar />
         <div class="product-display-container">
-          {filteredData.length === 0 ? <> <h2 class="sub-heading">No products found!</h2></> : <> <h2 class="sub-heading">Showing all Products</h2>
-            <div class="product-container">
-              {filteredData.map(item => <ProductCard item={item} />)}
-            </div></>}
-
+          {filteredData.length===0 ?<> <h2 class="sub-heading">No products found!</h2></>:<> <h2 class="sub-heading">Showing all Products</h2>
+          <div class="product-container">
+            {filteredData.map(item => <ProductCard item={item} />)}
+          </div></>}
+         
         </div>
       </div>
     </>

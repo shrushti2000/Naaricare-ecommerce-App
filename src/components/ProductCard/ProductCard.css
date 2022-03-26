@@ -4,6 +4,3 @@
 .card__btn-primary:hover{
 color: var( --primary-bg-color);
 }
-.card__icon:hover{
-    color: var(--secondary-bg-color);
-}

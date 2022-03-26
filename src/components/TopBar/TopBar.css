@@ -8,10 +8,6 @@
   justify-content: center;
   align-items: center;
   gap: 20rem;
-  position: sticky;
-  top:0px;
-  left: 0px;
-  z-index: 2;
 }
 .topbar-sale-title {
   margin-right: 5rem;
