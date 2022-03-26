@@ -8,6 +8,7 @@ import CartPage from "./pages/CartPage/CartPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ProductListingPage from "./pages/ProductListingPage/ProductListingPage";
 import Signin from "./pages/Signin/Signin";
+import WishlistPage from "./pages/WishlistPage/WishlistPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/productlistingpage" element={<ProductListingPage/>}/>
         <Route exact path="/signin" element={<Signin/>}/>
         <Route exact path="/cartpage" element={<CartPage/>}/>
+        <Route exact path="/wishlistpage" element={<WishlistPage/>}/>
        </Routes>
     </>
   );
