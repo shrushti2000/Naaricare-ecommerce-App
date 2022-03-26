@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useContext } from 'react'
 import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount, removeFromCart, updateProductQty } from '../../CartServices'
 import { StateContext } from '../../Context'
+import { addToWishlist, handleAddToWishlist } from '../../WishlistServices'
 import './CartPage.css'
 
 const CartPage = () => {
@@ -12,7 +13,7 @@ const CartPage = () => {
   const totalPrice = findPriceOfAllItems(state.cart)
   const totalDiscount = findTotalDiscount(state.cart)
   const finalCartPrice = calculateFinalCartPrice(totalPrice, totalDiscount, 50)
-  
+
   return (
     <>
       <h5 class="sub-heading">My Cart</h5>
@@ -41,10 +42,10 @@ const CartPage = () => {
                       </span>
                     </div>
                     <div class="card-footer flex-hz">
-                      <button class="btn btn-primary card__btn-primary">
-                        ADD TO CART
+                      <button class="btn btn-primary card__btn-primary" onClick={() => handleAddToWishlist(state.wishlist, item, encodedToken)}>
+                        ADD TO WISHLIST
                       </button>
-                      <button class="btn btn-outline-primary card__btn-secondary" onClick={(e)=>removeFromCart(item._id,encodedToken,dispatch)}>
+                      <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id, encodedToken, dispatch)}>
                         REMOVE FROM CART
                       </button>
                     </div>
