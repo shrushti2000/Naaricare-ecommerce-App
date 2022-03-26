@@ -17,7 +17,11 @@ import { StateContext } from '../../Context'
 import Categories from '../../components/Categories/Categories'
 
 const HomePage = () => {
+ 
   const {state,dispatch}=useContext(StateContext)
+ 
+
+
   useEffect(()=>{
     async function fetchData() {
       try {

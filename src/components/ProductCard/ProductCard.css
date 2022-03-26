@@ -1,3 +1,6 @@
 .card__image{
     height: 250px;
 }
+.card__btn-primary:hover{
+color: var( --primary-bg-color);
+}

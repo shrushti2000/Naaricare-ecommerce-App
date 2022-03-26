@@ -29,7 +29,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Maybelline New York Color Sensational Creamy Matte Lipstick",
-    desc: "The Maybelline Color Sensational Creamy Mattes Lipstick has a unique, velvety matte cream formula that offers a non-drying & un-crackable finish that stays comfortably on your lips through the day.",
+    desc: "The Maybelline Color Sensational Creamy Mattes Lipstick has a unique,velvety matte cream formula",
     info: "The Color Sensational Creamy Mattes Lipstick has a unique, matte cream formula that offers a non-drying & uncrackable finish that stays comfortably on your lips through the day.These hydrating lip colors that are infused with honey nectar, glide smoothly while keeping your lips moisturized all day long.These lipsticks are smooth, creamy, comfortable and are highly pigmented.The Color Sensational Creamy Matte Lipsticks are available in 35 pigmented shades; ranging from reds to nudes, and many more shades in the middle.",
     img: maybellineLipstick,
     price: 239,
@@ -56,6 +56,7 @@ export const products = [
     brand: "Maybelline",
     inStock: "true",
     fastDelivery: "true",
+    discount: 20,
     rating: 3,
     offer: "false",
     avalQty: 10,
@@ -63,8 +64,8 @@ export const products = [
   {
     _id: uuid(),
     name: "LAKMÉ 9 to 5 Primer + Matte Lip Color.Super Matte",
-    desc: '8 - 12 hours long stay.Comfortable matte finish; In built primer.Smooth and comfortable application.Matte Finish, MR20 Ruby Rush, 3.6 g,Gives intense matte finish.LogLasting.',
-    info: " Matte Finish, MR20 Ruby Rush, 3.6 g,Gives intense matte finish.LogLasting.",
+    desc: '8 - 12 hours long stay.Comfortable matte finish; In built primer.Smooth and comfortable application.',
+    info: " Matte Finish, MR20 Ruby Rush, 3.6 g,Gives intense matte finish.LogLasting.Matte Finish, MR20 Ruby Rush, 3.6 g,Gives intense matte finish.LogLasting.",
     img: LakmeLipstick,
     price: 250,
     categoryName: "Makeup",

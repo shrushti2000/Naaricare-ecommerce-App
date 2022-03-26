@@ -27,7 +27,7 @@ export const getRatingSortedData = (data, rating) => {
 }
 
 export const getFilteredData = (data, state,dispatch) => {
-    console.log('filter data')
+  
     let filteredData = [...data];
     if (state.sortByFilters.sortByCategory.length !== 0) {
         filteredData = filteredData.filter(item => state.sortByFilters.sortByCategory.includes(item.categoryName))

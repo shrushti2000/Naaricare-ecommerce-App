@@ -16,7 +16,8 @@ const Context = ({children}) => {
             sortByCategory:[],
             sortByBrands:[]
         },
-        subCategory:null
+        subCategory:null,
+        cart:[]
     })
 
   return (

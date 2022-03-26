@@ -1,9 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { StateContext } from '../../Context'
 import Searchbar from '../Searchbar/Searchbar'
 import './Header.css'
+import { useEffect } from 'react'
 
 const Header = () => {
+  const {state}=useContext(StateContext)
+  
   return (
     <>
       <div class="navigation-container flex-hz">
@@ -13,8 +18,8 @@ const Header = () => {
         <i class="fa fa-bars"></i>
         <Searchbar />
         <div class="navigation-item-3 flex-hz">
-          <button class="btn btn-primary">Login</button>
-          <i className="fa fa-shopping-cart"><span class="badge-w-icon">1</span></i>
+          <Link to="/signin"> <button class="btn btn-primary">Login</button></Link>
+          <Link to="/cartpage"><i className="fa fa-shopping-cart"><span class="badge-w-icon">{state.cart.length}</span></i></Link>
           <i class="fa fa-heart"><span class="badge-w-icon">10</span></i>
           <i class="fa fa-search search-icon-responsive"></i>
         </div>
