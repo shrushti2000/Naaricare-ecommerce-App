@@ -20,7 +20,7 @@ const Context = ({ children }) => {
     },
     subCategory: null,
     cart: [],
-   
+    wishlist:[]
   })
 
 

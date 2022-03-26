@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { addToCart, updateProductQty } from '../../CartServices'
 import { StateContext } from '../../Context'
-import { addToWishlist, handleAddToWishlist, removeFromWishlist } from '../../WishlistServices';
+import { handleAddToWishlist, removeFromWishlist } from '../../WishlistServices';
 
 import './ProductCard.css'
 
@@ -33,9 +33,6 @@ const ProductCard = ({ item }) => {
     }
   }
 
-  
-  
-
   return (
     <div class="card__container flex-vt">
       <img class="card__image" src={item.img} />
@@ -60,3 +57,6 @@ const ProductCard = ({ item }) => {
 }
 
 export default ProductCard
+
+
+ 
