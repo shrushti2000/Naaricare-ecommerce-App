@@ -19,6 +19,7 @@ const Header = () => {
         <Searchbar />
         <div class="navigation-item-3 flex-hz">
           <Link to="/signin"> <button class="btn btn-primary">Login</button></Link>
+          <Link to="/signup"> <button class="btn btn-primary">Signup</button></Link>
           <Link to="/cartpage"><i className="fa fa-shopping-cart"><span class="badge-w-icon">{state.cart.length}</span></i></Link>
           <Link to="/wishlistpage" ><i class="fa fa-heart"><span class="badge-w-icon">{state.wishlist.length}</span></i></Link>
           <i class="fa fa-search search-icon-responsive"></i>
