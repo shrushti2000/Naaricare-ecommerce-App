@@ -8,7 +8,6 @@ import { getFilteredData, getPriceRangedData, getRatingSortedData, getSortedData
 import './ProductListingPage.css'
 
 const ProductListingPage = () => {
-  const encodedToken = localStorage.getItem('token')
   const { state, dispatch } = useContext(StateContext)
 
   useEffect(() => {

@@ -20,9 +20,7 @@ const HomePage = () => {
  
   const {state,dispatch}=useContext(StateContext)
  
-
-
-  useEffect(()=>{
+   useEffect(()=>{
     async function fetchData() {
       try {
         const res = await fetch('/api/categories', { method: "GET" })

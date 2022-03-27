@@ -1,23 +1,23 @@
 import axios from 'axios'
 export const addToCart = (item, encodedToken,dispatch) => {
   
-   try{
-    fetch("/api/user/cart", {
-        method: "POST",
-        body: JSON.stringify({ product: item }),
-        headers: {
-            authorization: encodedToken,
-            "Content-type": "application/json; charset=UTF-8"
-        }
-    })
-        .then(res => res.json())
-        .then(data => dispatch({ type: 'SET_CART', payload: data.cart }))
-        
-   }catch(error){
-       console.log(error)
-   }
-}
-
+    try{
+     fetch("/api/user/cart", {
+         method: "POST",
+         body: JSON.stringify({ product: item }),
+         headers: {
+             authorization: encodedToken,
+             "Content-type": "application/json; charset=UTF-8"
+         }
+     })
+         .then(res => res.json())
+         .then(data => dispatch({ type: 'SET_CART', payload: data.cart }))
+         
+    }catch(error){
+        console.log(error)
+    }
+ }
+ 
 export const updateProductQty = async (id, encodedToken, dispatch, actionType) => {
     try {
         const {
