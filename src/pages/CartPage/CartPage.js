@@ -14,8 +14,8 @@ const CartPage = () => {
   const totalDiscount = findTotalDiscount(state.cart)
   const finalCartPrice = calculateFinalCartPrice(totalPrice, totalDiscount, 50)
 
-  return (
-    <>
+   return (
+   <>
       <h5 class="sub-heading">My Cart</h5>
       <div class="cart-page-container">
         <div class="cart-items-display">
@@ -42,7 +42,7 @@ const CartPage = () => {
                       </span>
                     </div>
                     <div class="card-footer flex-hz">
-                      <button class="btn btn-primary card__btn-primary" onClick={() => handleAddToWishlist(state.wishlist, item, encodedToken)}>
+                      <button class="btn btn-primary card__btn-primary" onClick={() => handleAddToWishlist(state.wishlist, item, encodedToken,dispatch)}>
                         ADD TO WISHLIST
                       </button>
                       <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id, encodedToken, dispatch)}>

@@ -26,6 +26,7 @@ const ProductListingPage = () => {
   const priceRangedData = getPriceRangedData(sortedData, state.priceRange)
   const ratingSortedData = getRatingSortedData(priceRangedData, state.rating)
   const filteredData = getFilteredData(ratingSortedData, state, dispatch)
+
   return (
     <>
 

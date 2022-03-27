@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { addToCart, updateProductQty } from '../../CartServices'
 import { StateContext } from '../../Context'
-import { addToWishlist, handleAddToWishlist, removeFromWishlist } from '../../WishlistServices';
+import { handleAddToWishlist, removeFromWishlist } from '../../WishlistServices';
 
 import './ProductCard.css'
 
@@ -19,7 +19,7 @@ const ProductCard = ({ item }) => {
     
     if (cartButtonText === "ADD TO CART") {
       if (isItemPresent === undefined) {
-        addToCart(item, encodedToken)
+        addToCart(item, encodedToken,dispatch)
         setCartButtonText('GO TO CART')
       } else {
         const isItemPresentInWishList = state.wishlist.find(itemInWishlist => itemInWishlist._id === item._id)
@@ -32,9 +32,6 @@ const ProductCard = ({ item }) => {
       navigate('/cartpage')
     }
   }
-
-  
-  
 
   return (
     <div class="card__container flex-vt">
@@ -51,7 +48,7 @@ const ProductCard = ({ item }) => {
       </div>
       <div class="card__footer flex-hz">
 
-      {state.wishlist.includes(item) ? <>  <div><button class="btn btn-primary card__btn-primary" onClick={()=>removeFromWishlist(item._id,encodedToken,dispatch)}>Remove</button></div></>:<>  <div><i style={{color: `${heartColor}`}} class="fa fa-heart card__icon" onClick={()=> handleAddToWishlist(state.wishlist,item, encodedToken)}></i></div></>}
+      {state.wishlist.includes(item) ? <>  <div><button class="btn btn-primary card__btn-primary" onClick={()=>removeFromWishlist(item._id,encodedToken,dispatch)}>Remove</button></div></>:<>  <div><i style={{color: `${heartColor}`}} class="fa fa-heart card__icon" onClick={()=> handleAddToWishlist(state.wishlist,item, encodedToken,dispatch)}></i></div></>}
       
         <button class="btn btn-primary card__btn-primary" onClick={handleAddTOCart}>{cartButtonText}</button>
       </div>
@@ -60,3 +57,6 @@ const ProductCard = ({ item }) => {
 }
 
 export default ProductCard
+
+
+ 

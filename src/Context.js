@@ -7,7 +7,7 @@ import stateReducer from './Reducer';
 export const StateContext = createContext();
 
 const Context = ({ children }) => {
-
+ 
   const [state, dispatch] = useReducer(stateReducer, {
     products: [],
     categories: [],
@@ -20,13 +20,14 @@ const Context = ({ children }) => {
     },
     subCategory: null,
     cart: [],
-   
+    wishlist:[]
   })
 
+ 
 
 
 
-  return (
+   return (
     <StateContext.Provider value={{ state, dispatch }}>
       {children}
     </StateContext.Provider>
