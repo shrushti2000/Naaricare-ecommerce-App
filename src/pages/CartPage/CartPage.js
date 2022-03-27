@@ -2,13 +2,14 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react'
+import { AuthContext } from '../../AuthProvider'
 import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount, removeFromCart, updateProductQty } from '../../CartServices'
 import { StateContext } from '../../Context'
 import { addToWishlist, handleAddToWishlist } from '../../WishlistServices'
 import './CartPage.css'
 
 const CartPage = () => {
-  const encodedToken = localStorage.getItem('token')
+  const {token}=useContext(AuthContext)
   const { state, dispatch } = useContext(StateContext)
   const totalPrice = findPriceOfAllItems(state.cart)
   const totalDiscount = findTotalDiscount(state.cart)
@@ -36,16 +37,16 @@ const CartPage = () => {
                     </div>
                     <div class="card__text-wrapper-1 flex-hz">
                       <p class="card__text-primary">Quantity : </p>
-                      <span class="flex-hz"><i class="fa fa-plus card-icon-plus" onClick={(e) => updateProductQty(item._id, encodedToken, dispatch, "increment")}></i>
+                      <span class="flex-hz"><i class="fa fa-plus card-icon-plus" onClick={(e) => updateProductQty(item._id, token, dispatch, "increment")}></i>
                         <p class="card-text">{item.qty}</p>
-                        <i class="fa fa-minus card-icon-plus" onClick={(e) => item.qty > 1 && updateProductQty(item._id, encodedToken, dispatch, "decrement")}></i>
+                        <i class="fa fa-minus card-icon-plus" onClick={(e) => item.qty > 1 && updateProductQty(item._id, token, dispatch, "decrement")}></i>
                       </span>
                     </div>
                     <div class="card-footer flex-hz">
-                      <button class="btn btn-primary card__btn-primary" onClick={() => handleAddToWishlist(state.wishlist, item, encodedToken,dispatch)}>
+                      <button class="btn btn-primary card__btn-primary" onClick={() => handleAddToWishlist(state.wishlist, item, token,dispatch)}>
                         ADD TO WISHLIST
                       </button>
-                      <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id, encodedToken, dispatch)}>
+                      <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id, token, dispatch)}>
                         REMOVE FROM CART
                       </button>
                     </div>
