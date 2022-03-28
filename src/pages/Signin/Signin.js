@@ -13,6 +13,28 @@ const Signin = () => {
         password: "adarshbalika",
     }
     let navigate = useNavigate();
+    const testCredentialsSigninHandler = async (e) => {
+        e.preventDefault()
+        try {
+            const {
+                data: { foundUser, encodedToken },
+                status,
+            } = await axios.post('/api/auth/login', {...testCredentials});
+            if (status === 200) {
+                localStorage.setItem(
+                    "login",
+                    JSON.stringify({ token: encodedToken })
+                );
+                setToken(encodedToken);
+                localStorage.setItem("user", JSON.stringify({ user: foundUser }));
+                setUser(foundUser);
+                console.log(foundUser)
+              navigate('/productlistingpage')
+            }
+        } catch (error) {
+            console.log("Error in login user", error);
+        }
+    }
     const signinHandler = async (e) => {
         e.preventDefault()
         try {
@@ -49,6 +71,7 @@ const Signin = () => {
                 </div>
                 <h5 class="text forgot-pw-text">Forgot Password?</h5>
                 <button class="btn btn-primary" onClick={signinHandler}>Signin</button>
+                <button class="btn btn-primary" onClick={testCredentialsSigninHandler}>Signin with Test Credentials</button>
                 <Link to="/signup" className="links text-link">Create new Account</Link>
             </form>
         </>
