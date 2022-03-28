@@ -14,12 +14,12 @@ const Signin = () => {
     }
     let navigate = useNavigate();
     const signinHandler = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         try {
             const {
                 data: { foundUser, encodedToken },
                 status,
-            } = await axios.post('api/auth/login', {email,password});
+            } = await axios.post('/api/auth/login', {email,password});
             if (status === 200) {
                 localStorage.setItem(
                     "login",
@@ -28,6 +28,7 @@ const Signin = () => {
                 setToken(encodedToken);
                 localStorage.setItem("user", JSON.stringify({ user: foundUser }));
                 setUser(foundUser);
+                console.log(foundUser)
               navigate('/productlistingpage')
             }
         } catch (error) {
@@ -47,7 +48,7 @@ const Signin = () => {
                     <input type="password" id="password-input" class="form-control" placeholder="enter password" required onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <h5 class="text forgot-pw-text">Forgot Password?</h5>
-                <button class="btn btn-primary" onClick={signinHandler}>Submit</button>
+                <button class="btn btn-primary" onClick={signinHandler}>Signin</button>
                 <Link to="/signup" className="links text-link">Create new Account</Link>
             </form>
         </>
