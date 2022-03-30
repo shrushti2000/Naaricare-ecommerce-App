@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext, useEffect } from 'react'
 import '../../App.css'
+import AuthProvider from '../../AuthProvider'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import { StateContext } from '../../Context'
@@ -9,6 +10,7 @@ import './ProductListingPage.css'
 
 const ProductListingPage = () => {
   const { state, dispatch } = useContext(StateContext)
+  
 
   useEffect(() => {
     async function fetchData() {

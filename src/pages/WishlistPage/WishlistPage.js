@@ -6,7 +6,7 @@ import './WishlistPage.css';
 
 const WishlistPage = () => {
     const {state,dispatch}=useContext(StateContext)
-    const encodedToken = localStorage.getItem('token')
+   
    
   return (
     <>

@@ -1,12 +1,12 @@
 import axios from 'axios'
-export const addToCart = (item, encodedToken,dispatch) => {
+export const addToCart = (item, token,dispatch) => {
   
     try{
      fetch("/api/user/cart", {
          method: "POST",
          body: JSON.stringify({ product: item }),
          headers: {
-             authorization: encodedToken,
+             authorization: token,
              "Content-type": "application/json; charset=UTF-8"
          }
      })
@@ -18,7 +18,7 @@ export const addToCart = (item, encodedToken,dispatch) => {
     }
  }
  
-export const updateProductQty = async (id, encodedToken, dispatch, actionType) => {
+export const updateProductQty = async (id, token, dispatch, actionType) => {
     try {
         const {
             data: { cart },
@@ -31,7 +31,7 @@ export const updateProductQty = async (id, encodedToken, dispatch, actionType) =
             },
             {
                 headers: {
-                    authorization: encodedToken,
+                    authorization: token,
                 },
             }
         );
@@ -41,13 +41,13 @@ export const updateProductQty = async (id, encodedToken, dispatch, actionType) =
     }
 }
 
-export const removeFromCart=async(id,encodedToken,dispatch)=> {
+export const removeFromCart=async(id,token,dispatch)=> {
     try {
       const {
         data: { cart },
       } = await axios.delete(`api/user/cart/${id}`, {
         headers: {
-          authorization: encodedToken,
+          authorization: token,
         },
       });
       dispatch({ type: 'SET_CART', payload: cart })

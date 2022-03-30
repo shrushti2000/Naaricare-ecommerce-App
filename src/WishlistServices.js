@@ -1,19 +1,19 @@
 import axios from "axios";
 
-export const handleAddToWishlist=(wishlist,item,encodedToken,dispatch)=>{
+export const handleAddToWishlist=(wishlist,item,token,dispatch)=>{
   const isItemPresent = wishlist.find(itemInWishlist => itemInWishlist._id === item._id)
     if (isItemPresent === undefined) {
-      addToWishlist(item, encodedToken,dispatch)
+      addToWishlist(item, token,dispatch)
     }
 }
 
-export const addToWishlist = (item, encodedToken,dispatch) => {
+export const addToWishlist = (item, token,dispatch) => {
    try{
     fetch("/api/user/wishlist", {
         method: "POST",
         body: JSON.stringify({ product: item }),
         headers: {
-            authorization: encodedToken,
+            authorization: token,
             "Content-type": "application/json; charset=UTF-8"
         }
     })
@@ -24,13 +24,13 @@ export const addToWishlist = (item, encodedToken,dispatch) => {
    }
 }
 
-export const removeFromWishlist=async(id,encodedToken,dispatch)=> {
+export const removeFromWishlist=async(id,token,dispatch)=> {
     try {
       const {
         data: { wishlist },
       } = await axios.delete(`api/user/wishlist/${id}`, {
         headers: {
-          authorization: encodedToken,
+          authorization: token,
         },
       });
       dispatch({ type: 'SET_WISHLIST', payload: wishlist })

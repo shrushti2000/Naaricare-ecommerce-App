@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import AuthProvider, { AuthContext } from '../../AuthProvider';
 import { addToCart, updateProductQty } from '../../CartServices'
 import { StateContext } from '../../Context'
 import { handleAddToWishlist, removeFromWishlist } from '../../WishlistServices';
@@ -9,7 +10,8 @@ import { handleAddToWishlist, removeFromWishlist } from '../../WishlistServices'
 import './ProductCard.css'
 
 const ProductCard = ({ item }) => {
-  const encodedToken = localStorage.getItem("token")
+ const { token }=useContext(AuthContext)
+ console.log(token)
   const { state,dispatch } = useContext(StateContext)
   let navigate = useNavigate();
   const [cartButtonText, setCartButtonText] = useState('ADD TO CART')
@@ -19,12 +21,12 @@ const ProductCard = ({ item }) => {
     
     if (cartButtonText === "ADD TO CART") {
       if (isItemPresent === undefined) {
-        addToCart(item, encodedToken,dispatch)
+        addToCart(item, token,dispatch)
         setCartButtonText('GO TO CART')
       } else {
         const isItemPresentInWishList = state.wishlist.find(itemInWishlist => itemInWishlist._id === item._id)
         if(isItemPresentInWishList!==undefined){
-          updateProductQty(item._id, encodedToken, dispatch, "increment")
+          updateProductQty(item._id, token, dispatch, "increment")
         }
         setCartButtonText("GO TO CART")
       }
@@ -48,7 +50,7 @@ const ProductCard = ({ item }) => {
       </div>
       <div class="card__footer flex-hz">
 
-      {state.wishlist.includes(item) ? <>  <div><button class="btn btn-primary card__btn-primary" onClick={()=>removeFromWishlist(item._id,encodedToken,dispatch)}>Remove</button></div></>:<>  <div><i style={{color: `${heartColor}`}} class="fa fa-heart card__icon" onClick={()=> handleAddToWishlist(state.wishlist,item, encodedToken,dispatch)}></i></div></>}
+      {state.wishlist.includes(item) ? <>  <div><button class="btn btn-primary card__btn-primary" onClick={()=>removeFromWishlist(item._id,token,dispatch)}>Remove</button></div></>:<>  <div><i style={{color: `${heartColor}`}} class="fa fa-heart card__icon" onClick={()=> handleAddToWishlist(state.wishlist,item, token,dispatch)}></i></div></>}
       
         <button class="btn btn-primary card__btn-primary" onClick={handleAddTOCart}>{cartButtonText}</button>
       </div>
