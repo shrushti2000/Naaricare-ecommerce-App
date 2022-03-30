@@ -1,3 +1,9 @@
+.card__container{
+    cursor: pointer;
+}
+.card__container:hover{
+    transform: scale(1.05);
+}
 .card__image{
     height: 250px;
 }

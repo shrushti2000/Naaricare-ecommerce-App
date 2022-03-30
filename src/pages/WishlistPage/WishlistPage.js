@@ -7,14 +7,12 @@ import './WishlistPage.css';
 const WishlistPage = () => {
     const {state,dispatch}=useContext(StateContext)
    
-   
-  return (
+    return (
     <>
      <div class="product-display-container">
         <h2 class="sub-heading">My WishList</h2>
         <div class="product-container">
            {state.wishlist.map(item=><ProductCard item={item}/>)}
-           
         </div>
     </div>
     </>

@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import ProductListingPage from "./pages/ProductListingPage/ProductListingPage";
 import Signin from "./pages/Signin/Signin";
 import Signup from "./pages/Signup/Signup";
+import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import WishlistPage from "./pages/WishlistPage/WishlistPage";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/cartpage" element={<CartPage />} />
         <Route exact path="/wishlistpage" element={<WishlistPage />} />
         <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/product/:productId" element={<SingleProductPage />} />
       </Routes>
     </>
   );
