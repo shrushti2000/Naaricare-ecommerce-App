@@ -26,7 +26,7 @@ const SingleProductPage = () => {
       }
     };
     fetchData();
-  }, [])
+  }, [productId])
   const handleAddTOCart = () => {
     const isItemPresent = state.cart.find(item => item._id === productId)
     console.log(isItemPresent)

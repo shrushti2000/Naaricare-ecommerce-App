@@ -11,19 +11,6 @@ import './ProductListingPage.css'
 const ProductListingPage = () => {
   const { state, dispatch } = useContext(StateContext)
   
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch('/api/products', { method: "GET" })
-        const data = await res.json()
-        dispatch({ type: 'SET_PRODUCTS', payload: data.products })
-      } catch (e) {
-        console.log(e)
-      }
-    };
-    fetchData();
-  }, [state])
   const sortedData = getSortedData(state.products, state.sortBy)
   const priceRangedData = getPriceRangedData(sortedData, state.priceRange)
   const ratingSortedData = getRatingSortedData(priceRangedData, state.rating)
