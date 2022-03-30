@@ -31,8 +31,7 @@ const Signup = () => {
             localStorage.setItem("user", JSON.stringify({ user: createdUser }));
             setUser(createdUser)
             navigate('/productlistingpage')
-            console.log(createdUser)
-          }
+           }
         } catch (error) {
           console.log("Error in signup user", error);
         }

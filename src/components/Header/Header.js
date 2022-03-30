@@ -30,7 +30,6 @@ const Header = () => {
        <div class="navigation-item-3 flex-hz">
           <Link to="/signin"> <button class="btn btn-primary">Signin</button></Link>
           <Link to="/signup"> <button class="btn btn-primary">Signup</button></Link>
-       
           <i class="fa fa-search search-icon-responsive"></i>
         </div>
        </>:<>
