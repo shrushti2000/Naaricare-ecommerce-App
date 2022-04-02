@@ -5,6 +5,8 @@ import { StateContext } from '../../Context'
 import Searchbar from '../Searchbar/Searchbar'
 import './Header.css'
 import { AuthContext } from '../../AuthProvider'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPalette, faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 
 
 const Header = () => {

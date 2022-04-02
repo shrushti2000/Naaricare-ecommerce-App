@@ -43,11 +43,12 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    features:["long lasting","fresh"]
   },
   {
     _id: uuid(),
     name: "Maybelline New York Hypercurl Mascara Waterproof, Black, 9.2g",
-    desc: 'Volume: Wax coating & special bristles that can reach the lash line up to the tip Gives 75% curled effect with a thick pad and lasts 3 times longer with the 18-hour formula',
+    desc: 'Volume: Wax coating & special bristles that can reach the lash line up to the tip Gives 75% curled effect',
     info: "Maybelline New York Hypercurl Mascara Waterproof gives a long lastig look. Contains Wax coating & special bristles that can reach the lash line up to the tip Gives 75% curled effect with a thick",
     img: LakmeMascara,
     price: 319,
@@ -82,7 +83,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Lakmé Absolute Spotlight Eye Shadow Palette, Berry Martini, 12 g",
-    desc: 'Highly pigmented with intense colour payoff.Ultra-rich velvety textures for a superior finish. Good pigmentation and coverage',
+    desc: 'Highly pigmented with intense colour payoff.Ultra-rich velvety textures for a superior finish.',
     info:"Highly pigmented with intense colour payoff.Ultra-rich velvety textures for a superior finish",
     img: EyeshadowPalette,
     price: 319,
@@ -299,8 +300,8 @@ export const products = [
   {
     _id: uuid(),
     name: "Stayfree Dry Max All Night XL Dry Cover Sanitary Pads",
-    desc: 'Ultra-Thin pads which prevent leakages from all sides no matter how much you move in your sleep. Usage type: Disposable. Wings: Yes',
-    info: "For Women Combo offer, 3 x 42s (126 napkins)",
+    desc: 'Ultra-Thin pads which prevent leakages from all sides no matter how much you move in your sleep.',
+    info: "For Women Combo offer, 3 x 42s (126 napkins).Usage type: Disposable. Wings: Yes",
     img: Stayfreepads,
     price: 1500,
     category: "MenstrualHygiene",
@@ -334,8 +335,8 @@ export const products = [
   {
     _id: uuid(),
     name: "Mamaearth Almond Shampoo.",
-    desc: 'PROMOTES HEALTHY HAIR GROWTH: Get stronger and longer hair with Mamaearth Almond Shampoo, enriched with the natural goodness of cold pressed Almond Oil,',
-    info: "Promotes hair groth.Stops hairfall and dandruff. Vitamin E and wheat amino acids.",
+    desc: 'PROMOTES HEALTHY HAIR GROWTH: Get stronger and longer hair with Mamaearth Almond Shampoo,Vitamin E and wheat amino acids.',
+    info: "Promotes hair groth.Stops hairfall and dandruff. Vitamin E and wheat amino acids. enriched with the natural goodness of cold pressed Almond Oil,",
     img: Mamaearth,
     price: 2730,
     categoryname: "Haircare",
@@ -455,7 +456,7 @@ export const products = [
     avalQty: 10,
   }, {
     _id: uuid(),
-    name: "",
+    name: "Mama Earth body wash",
     desc: 'Walnut provides natural exfoliation by removing dead skin cells and impurities from the skin, leaving it soft and supple.',
     info: "FOR GLOWING SKIN: Become a glow-getter! Crafted with the goodness of natural ingredients like Turmeric and Saffron, the body wash lends a natural radiance to the skin.",
     img: niveaBodyWash,

@@ -1,8 +1,9 @@
 .card__container{
     cursor: pointer;
+    box-shadow: none;
 }
 .card__container:hover{
-    transform: scale(1.05);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .card__image{
     height: 250px;
