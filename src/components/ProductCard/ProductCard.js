@@ -35,8 +35,16 @@ const ProductCard = ({ item }) => {
     }
   }
 
+  const openSingleProductPage=(e)=>{
+    console.log(e.target.className)
+    if(e.target.className!=="btn btn-primary card__btn-primary" && e.target.className!=="fa fa-heart card__icon"){
+      navigate(`/product/${item._id}`)
+    }
+   
+  }
+
   return (
-    <div class="card__container flex-vt">
+    <div class="card__container flex-vt" onClick={openSingleProductPage}>
       <img class="card__image" src={item.img} />
       <h3 class="card__title">{item.name}</h3>
       <p class="card__description">{item.desc}</p>
