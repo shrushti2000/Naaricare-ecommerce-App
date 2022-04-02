@@ -29,7 +29,6 @@ const SingleProductPage = () => {
   }, [productId])
   const handleAddTOCart = () => {
     const isItemPresent = state.cart.find(item => item._id === productId)
-    console.log(isItemPresent)
     { isItemPresent === undefined && addToCart(productItem, token, dispatch) }
   }
   return (

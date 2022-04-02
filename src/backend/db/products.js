@@ -453,5 +453,22 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+  }, {
+    _id: uuid(),
+    name: "",
+    desc: 'Walnut provides natural exfoliation by removing dead skin cells and impurities from the skin, leaving it soft and supple.',
+    info: "FOR GLOWING SKIN: Become a glow-getter! Crafted with the goodness of natural ingredients like Turmeric and Saffron, the body wash lends a natural radiance to the skin.",
+    img: niveaBodyWash,
+    price: 253,
+    category: "Bodycare",
+    subCategoryName:"BodyWash",
+    brand: "Mamaearth",
+    inStock: "true",
+    fastDelivery: "true",
+    rating: 3,
+    discount: 40,
+    offer: "false",
+    quantity: 0,
+    avalQty: 10,
   }
 ];
