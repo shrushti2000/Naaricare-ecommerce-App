@@ -42,6 +42,11 @@ export const getFilteredData = (data, state,dispatch) => {
         filteredData=filteredData.filter(item=>item.subCategoryName===state.subCategory)
        
     }
+
+    if(state.tag!==null){
+        filteredData=filteredData.filter(item=>item.group===state.tag)
+       
+    }
    
     return filteredData;
 }

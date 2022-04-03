@@ -20,6 +20,16 @@ import mamaearthbodylotion from '../../assets/ProductImages/mamaearthbodylotion.
 import himalayafacewash from '../../assets/ProductImages/HimalayfaceWash.jpg'
 import niveaBodyWash from '../../assets/ProductImages/niveaBodyWash.jpg'
 import LakmeNailPolish from '../../assets/ProductImages/LakmeNailPolish.jpg'
+import MyGlammLipstick from '../../assets/ProductImages/MyglamLipstick.jpg'
+import MyGlamPowder from '../../assets/ProductImages/MyglamPowder.jpg'
+import MyGlamEyeshadow from '../../assets/ProductImages/MyGlamEyeshadow.jpg'
+import biotiqueFaceCream from '../../assets/ProductImages/BiotiqueCream.jpg'
+import biotiqueBodyWash from '../../assets/ProductImages/BiotiqueBodywash.jpg'
+import kamaAryuvedafaceCream from '../../assets/ProductImages/kamaAryuvedafaceCream.jpg'
+import KayLipstick from '../../assets/ProductImages/KayLipstick.jpg'
+import ManishMalhotraLipstick from '../../assets/ProductImages/ManishMalhotraLipstick.jpg'
+
+
 
 /**
  * Product Database can be added here.
@@ -43,7 +53,45 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
-    features:["long lasting","fresh"]
+    group:"PinkFriday"
+  },
+  {
+    _id: uuid(),
+    name: "Kay Beauty Metallic Lip Topper - Leading Lady -2.8ml",
+    desc: "Kay Beauty Metallic Lip Topper has a unique,velvety matte cream formula",
+    info: "Unique Liquid To Powder Formula.Matte cream formula that offers a non-drying & uncrackable finish that stays comfortably on your lips through the day.These hydrating lip colors that are infused with honey nectar, glide smoothly while keeping your lips moisturized all day long.These lipsticks are smooth, creamy, comfortable and are highly pigmented.The Color Sensational Creamy Matte Lipsticks are available in 35 pigmented shades; ranging from reds to nudes, and many more shades in the middle.",
+    img: KayLipstick,
+    price: 239,
+    categoryName: "Makeup",
+    subCategoryName: "Lipstick",
+    brand: "KayBeauty",
+    inStock: "true",
+    fastDelivery: "true",
+    rating: 4,
+    discount: 20,
+    offer: "false",
+    quantity: 0,
+    avalQty: 10,
+    group:"KayBeauty"
+  },
+  {
+    _id: uuid(),
+    name: "Manish Malhotra Beauty By MyGlamm Hi-Shine Lipstick",
+    desc: ' The Manish Malhotra Hi-shine Lipstick exclusively by MyGlamm is a smooth, glossy lipstick that glides on effortlessly.',
+    info: " Matte Finish, MR20 Ruby Rush, 3.6 g,Gives intense matte finish.LogLasting.Matte Finish, MR20 Ruby Rush, 3.6 g,Gives intense matte finish.LogLasting.",
+    img: ManishMalhotraLipstick,
+    price: 250,
+    categoryName: "Makeup",
+    subCategoryName: "Lipstick",
+    brand: "Lakme",
+    inStock: "true",
+    fastDelivery: "true",
+    rating: 4,
+    discount: 30,
+    offer: "false",
+    quantity: 0,
+    avalQty: 6,
+    group:"ManishMalhotraLipstick"
   },
   {
     _id: uuid(),
@@ -61,6 +109,61 @@ export const products = [
     rating: 3,
     offer: "false",
     avalQty: 10,
+    group:null
+  },
+  {
+    _id: uuid(),
+    name: "MyGlamm Perfect Curves Matte Lip Crayon",
+    desc: 'MyGlamm’s Perfect Curves Matte Lip Crayon is enriched with tropical plant oils and argan oil to nourish and condition your lips',
+    info: "LONG LASTING: This long lasting matte crayon lipstick is designed to define, enhance and shape your lips. This hydrating matte lip crayon is not just a lipstick, but also doubles as a lip liner.",
+    img: MyGlammLipstick,
+    price: 719,
+    categoryName: "Makeup",
+    subCategoryName: "Lipstick",
+    brand: "MyGlamm",
+    inStock: "true",
+    fastDelivery: "true",
+    discount: 40,
+    rating: 3,
+    offer: "false",
+    avalQty: 10,
+    group:'MyGlamm'
+  },
+  {
+    _id: uuid(),
+    name: "MyGlamm Glow To Glamour Shimmer And Fixing Powder-20gm",
+    desc: 'Enhances the complexion, colourless on the skin with a pearlescent finish',
+    info: "Soft focus effect that blurs the look of fine lines and imperfections. Doesn't settle into fine lines and pores.",
+    img: MyGlamPowder,
+    price: 719,
+    categoryName: "Makeup",
+    subCategoryName: "Compact",
+    brand: "MyGlamm",
+    inStock: "true",
+    fastDelivery: "true",
+    discount: 40,
+    rating: 3,
+    offer: "false",
+    avalQty: 10,
+    group:'MyGlamm'
+  },
+  {
+    _id: uuid(),
+    name: "MyGlamm Powder Magic Eyeshadow",
+    desc: 'EASY EYESHADOW : Super easy, soft and powdery eyeshadow makeup application.',
+    info: "SPARKLING EYESHADOW : Light to medium coverage. Pearly to sparkling eyeshadow finish.Super easy, soft and powdery eyeshadow makeup application.",
+    img: MyGlamEyeshadow,
+    price: 719,
+    categoryName: "Makeup",
+    subCategoryName: "Eyeshadow",
+    brand: "MyGlamm",
+    inStock: "true",
+    fastDelivery: "true",
+    discount: 40,
+    rating: 3,
+    offer: "false",
+    avalQty: 10,
+    group:'MyGlamm'
   },
   {
     _id: uuid(),
@@ -79,7 +182,9 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 6,
+    group:null
   },
+ 
   {
     _id: uuid(),
     name: "Lakmé Absolute Spotlight Eye Shadow Palette, Berry Martini, 12 g",
@@ -97,6 +202,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"PinkFriday"
   },
   {
     _id: uuid(),
@@ -115,6 +221,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:null
   },
   {
     _id: uuid(),
@@ -133,6 +240,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:null
   },
   {
     _id: uuid(),
@@ -151,6 +259,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"PinkFriday"
   },
   {
     _id: uuid(),
@@ -169,6 +278,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"sugar"
   },
   {
     _id: uuid(),
@@ -183,10 +293,11 @@ export const products = [
     inStock: "true",
     fastDelivery: "true",
     rating: 5,
-    discount: 20,
+    discount: 40,
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"sugar"
   },
   {
     _id: uuid(),
@@ -205,6 +316,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"SummerBeautyStore"
   },
   {
     _id: uuid(),
@@ -223,6 +335,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"SummerBeautyStore"
   },
   {
     _id: uuid(),
@@ -241,6 +354,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"SummerBeautyStore"
   }
   ,
   {
@@ -260,6 +374,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"SummerBeautyStore"
   },
   {
     _id: uuid(),
@@ -278,6 +393,45 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:null
+  },
+  {
+    _id: uuid(),
+    name: "Biotique Bio Fruit Whitening  Tan Removal Face Pack",
+    desc: 'With regular use, skin reclaims its soft, smooth, youthful tone and texture',
+    info: "With regular use, skin reclaims its soft, smooth, youthful tone and texture.Contains with Niacinamide & Micro crystals 50g.Longlasting",
+    img:biotiqueFaceCream ,
+    price: 250,
+    categoryName: "Skincare",
+    subCategoryName: "FaceCream",
+    brand: "Biotique",
+    inStock: "true",
+    fastDelivery: "true",
+    rating: 3,
+    discount: 60,
+    offer: "false",
+    quantity: 0,
+    avalQty: 10,
+    group:"biotique"
+  },
+  {
+    _id: uuid(),
+    name: "Biotique Bio Apricot Refreshing Body Wash",
+    desc: 'Fresh-foaming, 100% soap-free gel is a refreshing gel; Contains Apricot, Kernel Oil, Wild Turmeric, kurchi and soap nut',
+    info: "Fresh-foaming, 100% soap-free gel is a refreshing gel; Contains Apricot, Kernel Oil, Wild Turmeric, kurchi and soap nut.It cleanses without dehydrating removing all microbes and pollutants",
+    img:biotiqueBodyWash ,
+    price: 250,
+    categoryName: "Skincare",
+    subCategoryName: "BodyCream",
+    brand: "Biotique",
+    inStock: "true",
+    fastDelivery: "true",
+    rating: 3,
+    discount: 60,
+    offer: "false",
+    quantity: 0,
+    avalQty: 10,
+    group:"biotique"
   }
   , {
     _id: uuid(),
@@ -296,6 +450,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:null
   },
   {
     _id: uuid(),
@@ -313,6 +468,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:null
   },
   {
     id: 300 + Date.now(),
@@ -331,6 +487,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:null
   },
   {
     _id: uuid(),
@@ -349,6 +506,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:null
   },
   {
     _id: uuid(),
@@ -367,6 +525,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:null
   },
   {
     _id: uuid(),
@@ -385,6 +544,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:null
   },
   , {
     id: 20000 + Date.now(),
@@ -403,6 +563,26 @@ export const products = [
     discount: 40,
     quantity: 0,
     avalQty: 10,
+    group:"NewLaunches"
+  },
+  {
+    _id: uuid(),
+    name: "Kama Ayurveda Signature Essentials Gift Box for Her",
+    desc: 'A delightful collection, lovingly handcrafted with pure ingredients that elegantly combines daily essentials.',
+    info: "lovingly handcrafted with pure ingredients that elegantly combines daily essentials for the face and indulgent pampering for the body.",
+    img:kamaAryuvedafaceCream ,
+    price: 250,
+    categoryName: "Bodycare",
+    subCategoryName: "BodyCream",
+    brand: "Biotique",
+    inStock: "true",
+    fastDelivery: "true",
+    rating: 3,
+    discount: 60,
+    offer: "false",
+    quantity: 0,
+    avalQty: 10,
+    group:"kama"
   }, {
     _id: uuid(),
     name: "Mamaearth Vitamin C Body Lotion",
@@ -420,6 +600,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"NewLaunches"
   }, {
     _id: uuid(),
     name: "NIVEA Body Wash, Fresh Powerfruit Shower Gel",
@@ -437,6 +618,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:null
   }, {
     _id: uuid(),
     name: "Mamaearth Ubtan Body Wash With Turmeric & Saffron, Shower Gel",
@@ -454,6 +636,7 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"BuyMoreSaveMore"
   }, {
     _id: uuid(),
     name: "Mama Earth body wash",
@@ -471,5 +654,6 @@ export const products = [
     offer: "false",
     quantity: 0,
     avalQty: 10,
+    group:"BuyMoreSaveMore"
   }
 ];

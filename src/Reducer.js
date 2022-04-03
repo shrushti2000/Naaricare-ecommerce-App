@@ -27,10 +27,12 @@ const stateReducer = (state, action) => {
                 sortByBrands: [],
 
             },
-            subCategory: null
+            subCategory: null,
+            tag:null
         }
         case 'SET_CART':return {...state,cart:action.payload}
         case 'SET_WISHLIST':return {...state,wishlist:action.payload}
+        case 'SET_TAG':return {...state,tag:action.payload}
         default: return state
     }
 

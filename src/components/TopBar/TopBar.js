@@ -6,7 +6,7 @@ import './TopBar.css'
 const TopBar = () => {
   return (
     <div className='top-bar'>
-        <p className='top-bar-item topbar-sale-title'>NaariCare's Pink Friday Sale!!!</p>
+        <p className='top-bar-item topbar-sale-title'>NaariCare's Pink Friday Sale is on!!!</p>
         <div className='top-bar-wrapper'>
            <p className='top-bar-item'> <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>  Store & Events  | </p>
             <p className='top-bar-item'><FontAwesomeIcon icon={faGift}></FontAwesomeIcon>  Gift card  | </p>

@@ -11,6 +11,7 @@ import Signin from "./pages/Signin/Signin";
 import Signup from "./pages/Signup/Signup";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import WishlistPage from "./pages/WishlistPage/WishlistPage";
+import SubHeader from "./components/SubHeader/SubHeader";
 
 function App() {
   const { state, dispatch } = useContext(StateContext)
