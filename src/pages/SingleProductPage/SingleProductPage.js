@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { addToCart } from '../../CartServices'
@@ -7,9 +7,12 @@ import { useContext } from 'react'
 import { StateContext } from '../../Context'
 import { AuthContext } from '../../AuthProvider'
 import './SingleProductPage.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import { handleAddToWishlist } from '../../WishlistServices'
 
 const SingleProductPage = () => {
-
+  let navigate = useNavigate();
   const { productId } = useParams()
   const [productItem, setProductItem] = useState({})
   const { state, dispatch } = useContext(StateContext)
@@ -44,7 +47,10 @@ const SingleProductPage = () => {
           <h5 className='singleProductPage-desc'>{productItem.desc}</h5>
           <h5 className='singleProductPage-info'>{productItem.info}</h5>
           <span> <h5 className='singleProductPage-price'>MRP: Rs {productItem.price}</h5> <h5 className='singleProductPage-discount'> {productItem.discount} % off</h5></span>
-          <button class="btn btn-primary card__btn-primary singleProductPage-btn" onClick={handleAddTOCart}>add to cart</button>
+          <div className='flex-hz'>
+            <FontAwesomeIcon icon={faHeart} className="heart-icon-single-prd-page" onClick={() => handleAddToWishlist(state.wishlist, productItem, token, dispatch, navigate)} />
+            <button class="btn btn-primary card__btn-primary singleProductPage-btn" onClick={handleAddTOCart}>add to cart</button>
+        </div>
         </div>
       </div>
 

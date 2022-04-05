@@ -33,3 +33,9 @@
 .singleProductPage-btn{
     font-size: 1.5rem;
 }
+.heart-icon-single-prd-page{
+cursor: pointer;
+}
+.heart-icon-single-prd-page:hover{
+    color: var(--secondary-bg-color);
+}
