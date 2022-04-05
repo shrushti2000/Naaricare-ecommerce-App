@@ -1,0 +1,17 @@
+.modal-overlay {
+  visibility: visible;
+  }
+  .modal-box{
+      height: fit-content;
+      padding: 10px;
+  }
+  .address-form-label{
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--secondary-bg-color);
+  }
+  .address-form-input{
+      font-size: 2rem;
+      height: 2.5rem;
+      outline: none;
+  }

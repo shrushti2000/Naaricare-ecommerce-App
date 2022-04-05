@@ -2,18 +2,20 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider'
 import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount, removeFromCart, updateProductQty } from '../../CartServices'
 import { StateContext } from '../../Context'
-import { addToWishlist, handleAddToWishlist } from '../../WishlistServices'
+import {handleAddToWishlist} from '../../WishlistServices'
 import './CartPage.css'
 
 const CartPage = () => {
   const {token}=useContext(AuthContext)
+  
   const { state, dispatch } = useContext(StateContext)
-  const totalPrice = findPriceOfAllItems(state.cart)
-  const totalDiscount = findTotalDiscount(state.cart)
-  const finalCartPrice = calculateFinalCartPrice(totalPrice, totalDiscount, 50)
+   const totalPrice = findPriceOfAllItems(state.cart)
+   const totalDiscount = findTotalDiscount(state.cart)
+   const finalCartPrice = calculateFinalCartPrice(totalPrice, totalDiscount, 50)
 
    return (
    <>
@@ -24,7 +26,7 @@ const CartPage = () => {
           {state.cart.map(item => {
             return (
               <>
-                <div class="card__container card-horizontal flex-hz">
+                <div class="card__container card-horizontal cart-card flex-hz">
                   <img class="card__image img-hz" src={item.img} />
                   <div class="card-horizontal-column flex-vt flex-wrap">
                     <h3 class="card__title">{item.name}</h3>
@@ -43,8 +45,8 @@ const CartPage = () => {
                       </span>
                     </div>
                     <div class="card-footer flex-hz">
-                      <button class="btn btn-primary card__btn-primary" onClick={() => handleAddToWishlist(state.wishlist, item, token,dispatch)}>
-                        ADD TO WISHLIST
+                      <button class="btn btn-primary card__btn-primary" onClick={(e) => handleAddToWishlist(state.wishlist, item, token,dispatch,null)}>
+                        MOVE TO WISHLIST
                       </button>
                       <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id, token, dispatch)}>
                         REMOVE FROM CART
@@ -74,8 +76,8 @@ const CartPage = () => {
             <h4 class="font-weight-bold">TOTAL AMOUNT</h4>
             <p class="text-sm">Rs {finalCartPrice}</p>
           </div>
-          <p class="text-sm">You will save Rs 1999 on this order</p>
-          <button class="btn btn-primary">PLACE ORDER</button>
+          
+         <Link to="/checkout" className="links"> <button class="btn btn-secondary">Checkout</button></Link>
         </div>
       </div>
     </>

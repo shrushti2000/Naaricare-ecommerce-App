@@ -1,0 +1,14 @@
+.address-selection-input{
+    align-items: flex-start;
+    margin: 5px 9rem;
+}
+.order-details-container{
+ border: 1px solid var(--black);
+ padding: 10px;
+ height: fit-content; 
+ margin: 5px 9rem;  
+}
+.text-sm{
+    margin: 5px;
+    font-size: 1.5rem;
+}

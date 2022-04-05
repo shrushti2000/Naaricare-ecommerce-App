@@ -21,7 +21,12 @@ const Context = ({ children }) => {
     subCategory: null,
     cart: [],
     wishlist:[],
-    tag:null
+    tag:null,
+    showtoast:false,
+    address:[],
+    showAddressModal:false,
+    addressEditMode:false,
+    addressToBeEdited:{}
   })
 
  

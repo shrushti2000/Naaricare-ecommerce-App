@@ -12,6 +12,10 @@ import Signup from "./pages/Signup/Signup";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import WishlistPage from "./pages/WishlistPage/WishlistPage";
 import SubHeader from "./components/SubHeader/SubHeader";
+import Toast from "./components/Toast/Toast";
+import UserProfile from "./pages/UserProfile/UserProfile";
+import { setInitialUseraddress } from "./addressService";
+import Checkout from "./pages/Checkout/Checkout";
 
 function App() {
   const { state, dispatch } = useContext(StateContext)
@@ -27,6 +31,10 @@ function App() {
     };
     fetchData();
   }, [])
+
+  useEffect(()=>{
+    setInitialUseraddress(state,dispatch)
+  },[])
  
    return (
     <>
@@ -40,6 +48,8 @@ function App() {
         <Route exact path="/wishlistpage" element={<WishlistPage />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/product/:productId" element={<SingleProductPage />} />
+        <Route exact path="/user_profile" element={<UserProfile />} />
+        <Route exact path="/checkout" element={<Checkout/>} />
       </Routes>
     </>
   );

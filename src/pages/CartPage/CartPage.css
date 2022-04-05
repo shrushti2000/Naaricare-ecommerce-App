@@ -4,6 +4,9 @@
     grid-template-areas: "cart-item-display  cart-summary-container";
     grid-template-columns: 1fr 1fr;
   }
+  .cart-page-container .cart-card{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
   .cart-items-display {
     grid-area: cart-item-display;
     justify-content: center;

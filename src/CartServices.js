@@ -1,21 +1,23 @@
 import axios from 'axios'
+import { Navigate } from 'react-router-dom'
 export const addToCart = (item, token,dispatch) => {
-  
+   
     try{
-     fetch("/api/user/cart", {
-         method: "POST",
-         body: JSON.stringify({ product: item }),
-         headers: {
-             authorization: token,
-             "Content-type": "application/json; charset=UTF-8"
-         }
-     })
-         .then(res => res.json())
-         .then(data => dispatch({ type: 'SET_CART', payload: data.cart }))
-         
-    }catch(error){
-        console.log(error)
-    }
+        fetch("/api/user/cart", {
+            method: "POST",
+            body: JSON.stringify({ product: item }),
+            headers: {
+                authorization: token,
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+            .then(res => res.json())
+            .then(data => dispatch({ type: 'SET_CART', payload: data.cart }))
+            
+       }catch(error){
+           console.log(error)
+       }
+   
  }
  
 export const updateProductQty = async (id, token, dispatch, actionType) => {

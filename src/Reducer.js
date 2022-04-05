@@ -28,11 +28,20 @@ const stateReducer = (state, action) => {
 
             },
             subCategory: null,
-            tag:null
+            tag:null,
+            
         }
         case 'SET_CART':return {...state,cart:action.payload}
         case 'SET_WISHLIST':return {...state,wishlist:action.payload}
         case 'SET_TAG':return {...state,tag:action.payload}
+        case 'SET_SHOW_TOAST':return {...state,showtoast:action.payload}
+        case 'SET_ADDRESS':return {...state,address:action.payload}
+        case 'SHOW_ADDRESS_MODAL':return {...state,showAddressModal:action.payload}
+        case 'ADD_NEW_ADDRESS':return {...state,address:[...state.address,action.payload]}
+        case 'REMOVE_ADDRESS':return {...state,address:state.address.filter(item=>item.address_id!==action.payload)}
+        case 'SET_ADDRESS_EDIT_MODE':return {...state,addressEditMode:action.payload}
+        case 'SET_ADDRESS_TO_EDIT':return {...state,addressToBeEdited:action.payload}
+        case 'UPDATE_ADDRESS':return{...state,address:state.address.map(item=>item.address_id===action.payload.address_id? action.payload:item)}
         default: return state
     }
 

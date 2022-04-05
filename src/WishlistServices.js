@@ -1,10 +1,17 @@
 import axios from "axios";
+import { removeFromCart } from "./CartServices";
 
-export const handleAddToWishlist=(wishlist,item,token,dispatch)=>{
-  const isItemPresent = wishlist.find(itemInWishlist => itemInWishlist._id === item._id)
+export const handleAddToWishlist=(wishlist,item,token,dispatch,navigate)=>{
+  if(token===undefined){
+    navigate('/signin')
+  }else{
+    const isItemPresent = wishlist.find(itemInWishlist => itemInWishlist._id === item._id)
     if (isItemPresent === undefined) {
       addToWishlist(item, token,dispatch)
+      removeFromCart(item._id,token,dispatch)
     }
+  }
+   
 }
 
 export const addToWishlist = (item, token,dispatch) => {

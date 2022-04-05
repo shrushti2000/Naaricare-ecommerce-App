@@ -6,7 +6,7 @@ import Searchbar from '../Searchbar/Searchbar'
 import './Header.css'
 import { AuthContext } from '../../AuthProvider'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPalette, faShoppingBag } from '@fortawesome/free-solid-svg-icons'
+import { faPalette, faShoppingBag, faUser, faUserCheck, faUserCircle, faUserEdit } from '@fortawesome/free-solid-svg-icons'
 
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
     <>
       <div class="navigation-container flex-hz">
         <div class="navigation-item-1">
-          <h5 class="lib-name-1">Naari <span class="lib-name-2">Care</span></h5>
+       <Link to="/" className='links'>   <h5 class="lib-name-1">Naari <span class="lib-name-2">Care</span></h5></Link>
         </div>
         <i class="fa fa-bars"></i>
         <Searchbar />
@@ -37,6 +37,7 @@ const Header = () => {
        </>:<>
         <div class="navigation-item-3 flex-hz">
            <button class="btn btn-primary" onClick={handleLogout}>Logout</button>
+         <Link to="/user_profile">  <FontAwesomeIcon icon={faUser} className="user-icon" ></FontAwesomeIcon></Link>
            <Link to="/cartpage"><i className="fa fa-shopping-cart"><span class="badge-w-icon">{state.cart.length}</span></i></Link>
           <Link to="/wishlistpage" ><i class="fa fa-heart"><span class="badge-w-icon">{state.wishlist.length}</span></i></Link>
           <i class="fa fa-search search-icon-responsive"></i>
