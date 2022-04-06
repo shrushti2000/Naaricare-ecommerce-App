@@ -1,21 +1,25 @@
-.profile-page-container{
+.profile-page-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
 }
-.title{
+
+.title {
     color: var(--secondary-bg-color);
     font-weight: 900;
     font-size: 4rem;
 }
-.user-info-display{
+
+.user-info-display {
     margin: 60px 30px;
 }
-.address-container{
+
+.address-container {
     margin-left: 90px;
 }
-.address-btns{
+
+.address-btns {
     font-size: 2rem;
     background-color: var(--secondary-bg-color);
     border: none;
@@ -25,11 +29,13 @@
     cursor: pointer;
     margin: 5px 1rem;
 }
-.address-btn-remove{
+
+.address-btn-remove {
     background-color: var(--secondary-bg-color);
     color: var(--white);
 }
-.address-btn-edit{
+
+.address-btn-edit {
     background-color: var(--primary-bg-color);
     color: var(--secondary-bg-color);
 }

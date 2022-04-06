@@ -1,9 +1,9 @@
-.forgot-pw-text{
+.forgot-pw-text {
     color: var(--info-color);
     margin: 1rem;
     text-align: right;
 }
 
-::placeholder{
+::placeholder {
     color: var(--light-grey);
 }

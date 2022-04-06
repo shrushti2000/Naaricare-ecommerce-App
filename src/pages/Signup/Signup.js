@@ -5,9 +5,10 @@ import { useContext, useState } from 'react'
 import './Signup.css'
 import { AuthContext } from '../../AuthProvider'
 import { StateContext } from '../../Context'
-import Toast from '../../components/Toast/Toast'
+import { Toast } from '../../components/index'
+
 const Signup = () => {
-  const { token, setToken, user, setUser } = useContext(AuthContext)
+  const {  setToken,  setUser } = useContext(AuthContext)
   const [firstName, setfirstName] = useState('');
   const [lastName, setlastName] = useState('')
   const [email, setEmail] = useState('');
@@ -73,4 +74,4 @@ const Signup = () => {
     </>
   )
 }
-export default Signup
+export { Signup }

@@ -4,10 +4,11 @@ import { useContext, useState } from 'react'
 import './Signin.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider';
-import Toast from '../../components/Toast/Toast';
+import { Toast } from '../../components/index';
 import { StateContext } from '../../Context';
+
 const Signin = () => {
-    const { token, setToken, user, setUser } = useContext(AuthContext)
+    const { setToken, setUser } = useContext(AuthContext)
     const { state, dispatch } = useContext(StateContext)
     console.log(state.showtoast)
     const [email, setEmail] = useState(' ');
@@ -93,4 +94,4 @@ const Signin = () => {
         </>
     )
 }
-export default Signin
+export { Signin }

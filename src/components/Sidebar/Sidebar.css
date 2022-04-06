@@ -44,16 +44,19 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-.clear-all{
+.clear-all {
   cursor: pointer;
 }
-.clear-all:hover{
+
+.clear-all:hover {
   color: var(--primary-text-color);
 }
-.slider-container{
+
+.slider-container {
   margin: 10px 0px;
 }
-.slider{
+
+.slider {
   -webkit-appearance: none;
   border-radius: 10px;
   color: red;
@@ -61,11 +64,12 @@ input[type="checkbox"] {
   height: 15px;
   background-color: var(--primary-bg-color);
 }
+
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   background-color: var(--secondary-bg-color);
   width: 2.5rem;
   height: 2.5rem;
-border-radius: 50%;
-cursor: pointer;
+  border-radius: 50%;
+  cursor: pointer;
 }

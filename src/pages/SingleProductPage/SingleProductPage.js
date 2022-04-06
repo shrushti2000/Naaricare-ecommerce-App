@@ -50,7 +50,7 @@ const SingleProductPage = () => {
           <div className='flex-hz'>
             <FontAwesomeIcon icon={faHeart} className="heart-icon-single-prd-page" onClick={() => handleAddToWishlist(state.wishlist, productItem, token, dispatch, navigate)} />
             <button class="btn btn-primary card__btn-primary singleProductPage-btn" onClick={handleAddTOCart}>add to cart</button>
-        </div>
+          </div>
         </div>
       </div>
 
@@ -58,4 +58,4 @@ const SingleProductPage = () => {
   )
 }
 
-export default SingleProductPage
+export { SingleProductPage }

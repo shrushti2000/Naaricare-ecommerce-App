@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { StateContext } from '../../Context'
-import Toast from '../Toast/Toast'
+import { Toast } from '../../components/index'
 import './AddressformModal.css'
 
 const AddressformModal = () => {
@@ -103,4 +103,4 @@ const AddressformModal = () => {
   )
 }
 
-export default AddressformModal
+export { AddressformModal }

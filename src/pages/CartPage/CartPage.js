@@ -1,24 +1,21 @@
-import axios from 'axios'
 import React from 'react'
-import { useEffect } from 'react'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider'
 import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount, removeFromCart, updateProductQty } from '../../CartServices'
 import { StateContext } from '../../Context'
-import {handleAddToWishlist} from '../../WishlistServices'
+import { handleAddToWishlist } from '../../WishlistServices'
 import './CartPage.css'
 
 const CartPage = () => {
-  const {token}=useContext(AuthContext)
-  
+  const { token } = useContext(AuthContext)
   const { state, dispatch } = useContext(StateContext)
-   const totalPrice = findPriceOfAllItems(state.cart)
-   const totalDiscount = findTotalDiscount(state.cart)
-   const finalCartPrice = calculateFinalCartPrice(totalPrice, totalDiscount, 50)
+  const totalPrice = findPriceOfAllItems(state.cart)
+  const totalDiscount = findTotalDiscount(state.cart)
+  const finalCartPrice = calculateFinalCartPrice(totalPrice, totalDiscount, 50)
 
-   return (
-   <>
+  return (
+    <>
       <h5 class="sub-heading">My Cart</h5>
       <div class="cart-page-container">
         <div class="cart-items-display">
@@ -45,7 +42,7 @@ const CartPage = () => {
                       </span>
                     </div>
                     <div class="card-footer flex-hz">
-                      <button class="btn btn-primary card__btn-primary" onClick={(e) => handleAddToWishlist(state.wishlist, item, token,dispatch,null)}>
+                      <button class="btn btn-primary card__btn-primary" onClick={(e) => handleAddToWishlist(state.wishlist, item, token, dispatch, null)}>
                         MOVE TO WISHLIST
                       </button>
                       <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id, token, dispatch)}>
@@ -76,12 +73,12 @@ const CartPage = () => {
             <h4 class="font-weight-bold">TOTAL AMOUNT</h4>
             <p class="text-sm">Rs {finalCartPrice}</p>
           </div>
-          
-         <Link to="/checkout" className="links"> <button class="btn btn-secondary">Checkout</button></Link>
+
+          <Link to="/checkout" className="links"> <button class="btn btn-secondary">Checkout</button></Link>
         </div>
       </div>
     </>
   )
 }
 
-export default CartPage
+export { CartPage }

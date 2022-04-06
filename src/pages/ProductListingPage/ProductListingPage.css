@@ -12,8 +12,8 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
- 
 }
+
 .product-container {
   display: flex;
   flex-direction: row;
@@ -21,6 +21,7 @@
   width: auto;
   column-gap: 2rem;
 }
+
 .card__icon {
   font-size: 3rem;
 }

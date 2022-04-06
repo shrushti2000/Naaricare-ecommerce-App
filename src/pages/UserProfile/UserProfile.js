@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { AuthContext } from '../../AuthProvider'
-import AddressformModal from '../../components/AddressformModal/AddressformModal'
+import { AddressformModal } from '../../components/index.js'
 import { StateContext } from '../../Context'
 import './UserProfile.css'
 
@@ -48,4 +48,4 @@ const UserProfile = () => {
     </>
   )
 }
-export default UserProfile
+export { UserProfile }

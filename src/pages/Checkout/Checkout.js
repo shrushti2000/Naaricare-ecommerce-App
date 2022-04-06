@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { useState } from 'react'
-import AuthProvider, { AuthContext } from '../../AuthProvider'
+import { AuthContext } from '../../AuthProvider'
 import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount } from '../../CartServices'
 import { StateContext } from '../../Context'
 import './Checkout.css'
@@ -76,4 +76,4 @@ const Checkout = () => {
     </>
   )
 }
-export default Checkout
+export { Checkout }

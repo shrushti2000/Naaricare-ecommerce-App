@@ -1,16 +1,20 @@
-.card__container{
+.card__container {
     cursor: pointer;
     box-shadow: none;
 }
-.card__container:hover{
+
+.card__container:hover {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.card__image{
+
+.card__image {
     height: 250px;
 }
-.card__btn-primary:hover{
-color: var( --primary-bg-color);
+
+.card__btn-primary:hover {
+    color: var(--primary-bg-color);
 }
-.card__icon:hover{
+
+.card__icon:hover {
     color: var(--secondary-bg-color);
 }
