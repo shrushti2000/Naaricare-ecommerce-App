@@ -68,7 +68,7 @@ const Signup = () => {
           <label for="password-input" class="form-label form-field-required">Password</label>
           <input type="password" id="password-input" class="form-control" placeholder="enter password" onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <button class="btn btn-primary" onClick={signupHandler}>Submit</button>
+        <button class="btn btn-secondary" onClick={signupHandler}>Submit</button>
         <Link to="/signin" className="links text-link">Already have an account?</Link>
       </form>
     </>

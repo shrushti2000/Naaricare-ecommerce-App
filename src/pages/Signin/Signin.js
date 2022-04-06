@@ -87,8 +87,8 @@ const Signin = () => {
                     <input type="password" id="password-input" class="form-control" placeholder="enter password" required onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <h5 class="text forgot-pw-text">Forgot Password?</h5>
-                <button class="btn btn-primary" onClick={signinHandler}>Signin</button>
-                <button class="btn btn-primary" onClick={testCredentialsSigninHandler}>Signin with Test Credentials</button>
+                <button class="btn btn-secondary" onClick={signinHandler}>Signin</button>
+                <button class="btn btn-secondary" onClick={testCredentialsSigninHandler}>Signin with Test Credentials</button>
                 <Link to="/signup" className="links text-link">Create new Account</Link>
             </form>
         </>
