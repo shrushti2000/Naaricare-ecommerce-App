@@ -19,7 +19,7 @@ const Sidebar = () => {
             <label class="text-sm"> <input value={state.sortBy} name="sortBy" checked={state.sortBy && state.sortBy === "high-to-low"} type="radio" onClick={() => dispatch({ type: 'SET_SORT_TYPE', payload: "high-to-low" })} /> High to Low</label>
           </div>
           <h5 class="filter-heading">Filter by price</h5>
-          <div class="filter-container">
+          {/* <div class="filter-container">
             <select name="price" value={state.priceRange} class="price-filter" onChange={(e) => dispatch({ type: 'SET_PRICE_RANGE', payload: e.target.value })}>
               <option value="0" class="text-sm" >Rs 0 and above</option>
               <option value="0-500" class="text-sm" >under Rs 500</option>
@@ -27,6 +27,11 @@ const Sidebar = () => {
               <option value="1000-2000" class="text-sm">Rs 1000-Rs 2000</option>
               <option value="2000" class="text-sm">Rs 2000 and above</option>
             </select>
+          </div> */}
+          <div className='slider-container'>
+           
+          <input value={state.priceRange} type="range" min="0" max="3000" step="500" class='slider'  onChange={(e)=>dispatch({ type: 'SET_PRICE_RANGE', payload: e.target.value })}/>
+           {state.priceRange>0 && <p class="value" className='text-sm'>Selected price range: Rs 0 to Rs {state.priceRange}<span id="slider-value"></span></p>}
           </div>
           <h5 class="filter-heading">Category</h5>
           <div class="filter-container">
