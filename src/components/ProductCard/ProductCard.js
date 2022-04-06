@@ -3,9 +3,9 @@ import { useContext } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import  { AuthContext } from '../../AuthProvider';
-import { addToCart, updateProductQty } from '../../CartServices'
+import { addToCart, updateProductQty } from '../../Services/CartServices'
 import { StateContext } from '../../Context'
-import { handleAddToWishlist, removeFromWishlist } from '../../WishlistServices';
+import { handleAddToWishlist, removeFromWishlist } from '../../Services/WishlistServices';
 
 import './ProductCard.css'
 

@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import '../../App.css'
 import { Sidebar, ProductCard } from '../../components/index'
 import { StateContext } from '../../Context'
-import { getFilteredData, getPriceRangedData, getRatingSortedData, getSortedData } from '../../utilityFunctions'
+import { getFilteredData, getPriceRangedData, getRatingSortedData, getSortedData } from '../../Services/utilityFunctions'
 import './ProductListingPage.css'
 
 

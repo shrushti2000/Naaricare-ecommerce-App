@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { useState } from 'react'
 import { AuthContext } from '../../AuthProvider'
-import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount } from '../../CartServices'
+import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount } from '../../Services/CartServices'
 import { StateContext } from '../../Context'
 import './Checkout.css'
 

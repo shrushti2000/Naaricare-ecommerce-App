@@ -6,7 +6,7 @@ import { Searchbar } from '../../components/index'
 import './Header.css'
 import { AuthContext } from '../../AuthProvider'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPalette, faShoppingBag, faUser, faUserCheck, faUserCircle, faUserEdit } from '@fortawesome/free-solid-svg-icons'
+import { faCartArrowDown, faHeart, faPalette, faShoppingBag, faShoppingCart, faUser, faUserCheck, faUserCircle, faUserEdit } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
   const { state } = useContext(StateContext)
@@ -30,14 +30,15 @@ const Header = () => {
         {token === undefined ? <>
           <div class="navigation-item-3 flex-hz">
             <Link to="/signin"> <button class="btn btn-primary">Signin</button></Link>
-            <Link to="/signup"> <button class="btn btn-primary">Signup</button></Link>
+            <Link to='/signin'> <FontAwesomeIcon className='cart-icon' icon={faShoppingCart} ></FontAwesomeIcon></Link>
+            <Link to='/signin'> <FontAwesomeIcon className='cart-icon' icon={faHeart} ></FontAwesomeIcon></Link>
             <i class="fa fa-search search-icon-responsive"></i>
           </div>
         </> : <>
           <div class="navigation-item-3 flex-hz">
             <button class="btn btn-primary" onClick={handleLogout}>Logout</button>
             <Link to="/user_profile">  <FontAwesomeIcon icon={faUser} className="user-icon" ></FontAwesomeIcon></Link>
-            <Link to="/cartpage"><i className="fa fa-shopping-cart"><span class="badge-w-icon">{state.cart.length}</span></i></Link>
+            <Link to="/cartpage"><i class="fa fa-shopping-cart"><span class="badge-w-icon">1</span></i></Link>
             <Link to="/wishlistpage" ><i class="fa fa-heart"><span class="badge-w-icon">{state.wishlist.length}</span></i></Link>
             <i class="fa fa-search search-icon-responsive"></i>
           </div>

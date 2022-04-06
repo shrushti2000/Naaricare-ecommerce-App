@@ -2,9 +2,9 @@ import React from 'react'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider'
-import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount, removeFromCart, updateProductQty } from '../../CartServices'
+import { calculateFinalCartPrice, findPriceOfAllItems, findTotalDiscount, removeFromCart, updateProductQty } from '../../Services/CartServices'
 import { StateContext } from '../../Context'
-import { handleAddToWishlist } from '../../WishlistServices'
+import { handleAddToWishlist } from '../../Services/WishlistServices'
 import './CartPage.css'
 
 const CartPage = () => {

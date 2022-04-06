@@ -4,7 +4,7 @@ import "./App.css";
 import { Header, TopBar } from "./components/index";
 import { StateContext } from "./Context";
 import { HomePage, ProductListingPage, Signin, Signup, CartPage, WishlistPage, SingleProductPage, UserProfile, Checkout } from './pages/index'
-import { setInitialUseraddress } from "./addressService";
+import { setInitialUseraddress } from "./Services/addressService";
 
 function App() {
   const { state, dispatch } = useContext(StateContext)

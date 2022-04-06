@@ -2,14 +2,14 @@ import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { addToCart } from '../../CartServices'
+import { addToCart } from '../../Services/CartServices'
 import { useContext } from 'react'
 import { StateContext } from '../../Context'
 import { AuthContext } from '../../AuthProvider'
 import './SingleProductPage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
-import { handleAddToWishlist } from '../../WishlistServices'
+import { handleAddToWishlist } from '../../Services/WishlistServices'
 
 const SingleProductPage = () => {
   let navigate = useNavigate();

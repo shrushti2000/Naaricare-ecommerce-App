@@ -15,5 +15,10 @@
 
 .user-icon {
     font-size: 3rem;
-    color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
+}
+
+.cart-icon{
+    font-size: 3rem;
+    color: var(--secondary-text-color);
 }
