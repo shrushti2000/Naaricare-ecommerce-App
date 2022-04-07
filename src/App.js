@@ -39,6 +39,14 @@ function App() {
         <Route exact path="/product/:productId" element={<SingleProductPage />} />
         <Route exact path="/user_profile" element={<UserProfile />} />
         <Route exact path="/checkout" element={<Checkout />} />
+        <Route
+          path="*"
+          element={
+            <>
+              <h1>No page found</h1>
+            </>
+          }
+        />
       </Routes>
     </>
   );
