@@ -1,13 +1,8 @@
 export const getPriceRangedData = (data, priceRange) => {
-    const [startValue, endValue] = priceRange.toString().split('-')
-    if (priceRange !== 0) {
-        if (startValue !== undefined && endValue !== undefined) {
-            return data.filter(item => item.price >= parseInt(startValue) && item.price < parseInt(endValue))
-        } else {
-            return data.filter(item => item.price > parseInt(startValue))
-        }
+    if (priceRange > 0) {
+        return data.filter(item => item.price < priceRange)
     }
-    return data;
+    return data
 }
 
 export const getSortedData = (data, sortType) => {
@@ -26,8 +21,8 @@ export const getRatingSortedData = (data, rating) => {
     return data
 }
 
-export const getFilteredData = (data, state,dispatch) => {
-  
+export const getFilteredData = (data, state, dispatch) => {
+
     let filteredData = [...data];
     if (state.sortByFilters.sortByCategory.length !== 0) {
         filteredData = filteredData.filter(item => state.sortByFilters.sortByCategory.includes(item.categoryName))
@@ -38,15 +33,15 @@ export const getFilteredData = (data, state,dispatch) => {
     // if (state.sortByFilters.sortBySubCategory.length !== 0) {
     //     filteredData = filteredData.filter(item => state.sortByFilters.sortBySubCategory.includes(item.subCategoryName))
     // }
-    if(state.subCategory!==null){
-        filteredData=filteredData.filter(item=>item.subCategoryName===state.subCategory)
-       
+    if (state.subCategory !== null) {
+        filteredData = filteredData.filter(item => item.subCategoryName === state.subCategory)
+
     }
 
-    if(state.tag!==null){
-        filteredData=filteredData.filter(item=>item.group===state.tag)
-       
+    if (state.tag !== null) {
+        filteredData = filteredData.filter(item => item.group === state.tag)
+
     }
-   
+
     return filteredData;
 }

@@ -3,11 +3,10 @@ import { useReducer, useEffect } from 'react';
 import { createContext } from 'react';
 import stateReducer from './Reducer';
 
-
 export const StateContext = createContext();
 
 const Context = ({ children }) => {
- 
+
   const [state, dispatch] = useReducer(stateReducer, {
     products: [],
     categories: [],
@@ -20,15 +19,20 @@ const Context = ({ children }) => {
     },
     subCategory: null,
     cart: [],
-    wishlist:[],
-    tag:null
+    wishlist: [],
+    tag: null,
+    showtoast: false,
+    address: [],
+    showAddressModal: false,
+    addressEditMode: false,
+    addressToBeEdited: {}
   })
 
- 
 
 
 
-   return (
+
+  return (
     <StateContext.Provider value={{ state, dispatch }}>
       {children}
     </StateContext.Provider>

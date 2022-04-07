@@ -1,17 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import "./App.css";
-import Header from "./components/Header/Header";
-import TopBar from "./components/TopBar/TopBar";
+import { Header, TopBar } from "./components/index";
 import { StateContext } from "./Context";
-import CartPage from "./pages/CartPage/CartPage";
-import HomePage from "./pages/HomePage/HomePage";
-import ProductListingPage from "./pages/ProductListingPage/ProductListingPage";
-import Signin from "./pages/Signin/Signin";
-import Signup from "./pages/Signup/Signup";
-import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
-import WishlistPage from "./pages/WishlistPage/WishlistPage";
-import SubHeader from "./components/SubHeader/SubHeader";
+import { HomePage, ProductListingPage, Signin, Signup, CartPage, WishlistPage, SingleProductPage, UserProfile, Checkout } from './pages/index'
+import { setInitialUseraddress } from "./Services/addressService";
 
 function App() {
   const { state, dispatch } = useContext(StateContext)
@@ -27,8 +20,12 @@ function App() {
     };
     fetchData();
   }, [])
- 
-   return (
+
+  useEffect(() => {
+    setInitialUseraddress(state, dispatch)
+  }, [])
+
+  return (
     <>
       <TopBar />
       <Header />
@@ -40,6 +37,8 @@ function App() {
         <Route exact path="/wishlistpage" element={<WishlistPage />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/product/:productId" element={<SingleProductPage />} />
+        <Route exact path="/user_profile" element={<UserProfile />} />
+        <Route exact path="/checkout" element={<Checkout />} />
       </Routes>
     </>
   );

@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import './Carousel.css'
 import CarouselImage1 from '../../assets/Images/sliderImage1.png'
 import CarouselImage2 from '../../assets/Images/sliderImage2.png'
@@ -36,4 +36,4 @@ const Carousel = () => {
   )
 }
 
-export default Carousel
+export { Carousel }

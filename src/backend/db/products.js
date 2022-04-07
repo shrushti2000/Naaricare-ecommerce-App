@@ -58,7 +58,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Kay Beauty Metallic Lip Topper - Leading Lady -2.8ml",
-    desc: "Kay Beauty Metallic Lip Topper has a unique,velvety matte cream formula",
+    desc: "Kay Beauty Metallic Lip Topper has a unique,velvety matte cream formula.Matte cream formula that offers a non-drying",
     info: "Unique Liquid To Powder Formula.Matte cream formula that offers a non-drying & uncrackable finish that stays comfortably on your lips through the day.These hydrating lip colors that are infused with honey nectar, glide smoothly while keeping your lips moisturized all day long.These lipsticks are smooth, creamy, comfortable and are highly pigmented.The Color Sensational Creamy Matte Lipsticks are available in 35 pigmented shades; ranging from reds to nudes, and many more shades in the middle.",
     img: KayLipstick,
     price: 239,
@@ -150,7 +150,7 @@ export const products = [
   {
     _id: uuid(),
     name: "MyGlamm Powder Magic Eyeshadow",
-    desc: 'EASY EYESHADOW : Super easy, soft and powdery eyeshadow makeup application.',
+    desc: 'EASY EYESHADOW : Super easy, soft and powdery eyeshadow makeup application.  Pearly to sparkling eyeshadow finish.Super easy, soft',
     info: "SPARKLING EYESHADOW : Light to medium coverage. Pearly to sparkling eyeshadow finish.Super easy, soft and powdery eyeshadow makeup application.",
     img: MyGlamEyeshadow,
     price: 719,
@@ -168,7 +168,7 @@ export const products = [
   {
     _id: uuid(),
     name: "LAKMÉ 9 to 5 Primer + Matte Lip Color.Super Matte",
-    desc: '8 - 12 hours long stay.Comfortable matte finish; In built primer.Smooth and comfortable application.',
+    desc: '8 - 12 hours long stay.Comfortable matte finish; In built primer.Smooth  application.',
     info: " Matte Finish, MR20 Ruby Rush, 3.6 g,Gives intense matte finish.LogLasting.Matte Finish, MR20 Ruby Rush, 3.6 g,Gives intense matte finish.LogLasting.",
     img: LakmeLipstick,
     price: 250,
@@ -360,7 +360,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Neutrogena Ultra sheer Sunscreen, SPF 50+",
-    desc: 'Neutrogena Ultra Sheer Dry Touch Sunblock, SPF 50+ sunscreen for men and women',
+    desc: 'Neutrogena Ultra Sheer Dry Touch Sunblock, SPF 50+ sunscreen for men and women.Long lasting and fresh.LongLasting and waterproof.',
     info: "Ultra light, for oily and dry skin, 30ml.LongLasting and waterproof.",
     img: NeutrogenaSunscreen,
     price: "217",
@@ -455,7 +455,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Stayfree Dry Max All Night XL Dry Cover Sanitary Pads",
-    desc: 'Ultra-Thin pads which prevent leakages from all sides no matter how much you move in your sleep.',
+    desc: 'Ultra-Thin pads which prevent leakages from all sides  in your sleep.',
     info: "For Women Combo offer, 3 x 42s (126 napkins).Usage type: Disposable. Wings: Yes",
     img: Stayfreepads,
     price: 1500,
@@ -472,8 +472,8 @@ export const products = [
   },
   {
     id: 300 + Date.now(),
-    name: "Everteen SuperPlus Tampons with Applicator for Women",
-    desc: 'Invisible leak-proof protection with never-before freedom to swim, dance & go to gym during periods',
+    name: "Everteen SuperPlus Tampons with Applicator",
+    desc: 'Invisible leak-proof protection freedom to swim, dance & go to gym during periods',
     info: "(12-15gm absorbency, 1 pack of 8pcs),Complete leak-proof.",
     img: Tampons,
     price: 273,
@@ -574,7 +574,7 @@ export const products = [
     price: 250,
     categoryName: "Bodycare",
     subCategoryName: "BodyCream",
-    brand: "Biotique",
+    brand: "kama",
     inStock: "true",
     fastDelivery: "true",
     rating: 3,
@@ -640,7 +640,7 @@ export const products = [
   }, {
     _id: uuid(),
     name: "Mama Earth body wash",
-    desc: 'Walnut provides natural exfoliation by removing dead skin cells and impurities from the skin, leaving it soft and supple.',
+    desc: 'Walnut provides natural exfoliation by removing dead skin cells.',
     info: "FOR GLOWING SKIN: Become a glow-getter! Crafted with the goodness of natural ingredients like Turmeric and Saffron, the body wash lends a natural radiance to the skin.",
     img: niveaBodyWash,
     price: 253,

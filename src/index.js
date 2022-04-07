@@ -13,12 +13,12 @@ makeServer();
 ReactDOM.render(
   <AuthProvider>
     <Context>
-    <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </BrowserRouter>
-  </Context>
+      <BrowserRouter>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </BrowserRouter>
+    </Context>
   </AuthProvider>
   ,
   document.getElementById("root")
