@@ -38,7 +38,7 @@ const Header = () => {
           <div class="navigation-item-3 flex-hz">
             <button class="btn btn-primary" onClick={handleLogout}>Logout</button>
             <Link to="/user_profile">  <FontAwesomeIcon icon={faUser} className="user-icon" ></FontAwesomeIcon></Link>
-            <Link to="/cartpage"><i class="fa fa-shopping-cart"><span class="badge-w-icon">1</span></i></Link>
+            <Link to="/cartpage"><i class="fa fa-shopping-cart"><span class="badge-w-icon">{state.cart.length}</span></i></Link>
             <Link to="/wishlistpage" ><i class="fa fa-heart"><span class="badge-w-icon">{state.wishlist.length}</span></i></Link>
             <i class="fa fa-search search-icon-responsive"></i>
           </div>

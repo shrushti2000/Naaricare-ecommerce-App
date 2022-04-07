@@ -19,8 +19,7 @@ const CartPage = () => {
       <h5 class="sub-heading">My Cart</h5>
       <div class="cart-page-container">
         <div class="cart-items-display">
-
-          {state.cart.map(item => {
+        {state.cart.length===0? <><h3>Your cart is empty!</h3></>:<> {state.cart.map(item => {
             return (
               <>
                 <div class="card__container card-horizontal cart-card flex-hz">
@@ -53,7 +52,7 @@ const CartPage = () => {
                 </div>
               </>
             )
-          })}
+          })}</>}
         </div>
         <div class="cart-summary-container">
           <h4 class="font-weight-bold">PRICE DETAILS</h4>

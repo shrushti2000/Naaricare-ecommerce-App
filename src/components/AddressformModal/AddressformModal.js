@@ -53,6 +53,7 @@ const AddressformModal = () => {
 
       dispatch({ type: 'UPDATE_ADDRESS', payload: newaddress })
       dispatch({ type: 'SHOW_ADDRESS_MODAL', payload: !state.showAddressModal })
+      dispatch({ type: 'SET_ADDRESS_EDIT_MODE', payload: !state.addressEditMode })
     } else {
       dispatch({ type: 'SET_SHOW_TOAST', payload: !state.showtoast })
       setMsg("Please enter all address details properly")

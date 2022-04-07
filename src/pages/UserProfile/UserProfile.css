@@ -33,9 +33,13 @@
 .address-btn-remove {
     background-color: var(--secondary-bg-color);
     color: var(--white);
+    margin-top: 2px;
+    font-size: 1.5rem;
 }
 
 .address-btn-edit {
     background-color: var(--primary-bg-color);
     color: var(--secondary-bg-color);
+    margin-top: 2px;
+    font-size: 1.5rem;
 }
