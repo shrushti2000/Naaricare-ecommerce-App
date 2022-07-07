@@ -23,10 +23,7 @@ const Header = () => {
   const { state, dispatch } = useContext(StateContext);
   const { token, setToken } = useContext(AuthContext);
   const isMobile = useMediaQuery({ query: `(max-width: 600px)` });
-
-  console.log(isMobile);
   const location = useLocation();
-  console.log(location.pathname);
   let navigate = useNavigate();
   const handleLogout = () => {
     localStorage.clear();
