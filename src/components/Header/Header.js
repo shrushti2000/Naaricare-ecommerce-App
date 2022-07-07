@@ -95,7 +95,6 @@ const Header = () => {
                   <span class="badge-w-icon">{state.wishlist.length}</span>
                 </i>
               </Link>
-              <i class="fa fa-search search-icon-responsive"></i>
             </div>
           </>
         )}
