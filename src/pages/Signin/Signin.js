@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider';
 import { Toast } from '../../components/index';
 import { StateContext } from '../../Context';
+import './Signin.css'
 
 const Signin = () => {
     const { setToken, setUser } = useContext(AuthContext)
@@ -86,7 +87,6 @@ const Signin = () => {
                     <label for="password-input" class="form-label form-field-required" >Password</label>
                     <input type="password" id="password-input" class="form-control" placeholder="enter password" required onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <h5 class="text forgot-pw-text">Forgot Password?</h5>
                 <button class="btn btn-secondary" onClick={signinHandler}>Signin</button>
                 <button class="btn btn-secondary" onClick={testCredentialsSigninHandler}>Signin with Test Credentials</button>
                 <Link to="/signup" className="links text-link">Create new Account</Link>
