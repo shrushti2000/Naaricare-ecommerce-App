@@ -70,7 +70,6 @@ const Header = () => {
                   icon={faHeart}
                 ></FontAwesomeIcon>
               </Link>
-              <i class="fa fa-search search-icon-responsive"></i>
             </div>
           </>
         ) : (
