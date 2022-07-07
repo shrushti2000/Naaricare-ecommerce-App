@@ -39,6 +39,7 @@
   .top-bar {
     height: 4rem;
     position: fixed;
+    width: 100%;
     top: 0px;
     left: 0px;
     z-index: 4;
