@@ -34,7 +34,7 @@ const CartPage = () => {
                       <p class="card__text-secondary">{item.discount}% off</p>
                     </div>
                     <div class="card__text-wrapper-1 flex-hz">
-                      <p class="card__text-primary">Quantity : </p>
+                      <p class="card__text-primary">Quantity: </p>
                       <span class="flex-hz"><i class="fa fa-plus card-icon-plus" onClick={(e) => updateProductQty(item._id, token, dispatch, "increment")}></i>
                         <p class="card-text">{item.qty}</p>
                         <i class="fa fa-minus card-icon-plus" onClick={(e) => item.qty > 1 && updateProductQty(item._id, token, dispatch, "decrement")}></i>
