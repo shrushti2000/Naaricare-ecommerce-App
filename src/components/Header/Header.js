@@ -25,7 +25,7 @@ const Header = () => {
         <div class="navigation-item-1">
           <Link to="/" className='links'>   <h5 class="lib-name-1">Naari <span class="lib-name-2">Care</span></h5></Link>
         </div>
-        <i class="fa fa-bars"></i>
+        <Link to="/" className='links lib-name-sm'>   <h5 class="lib-name-1">Naari <span class="lib-name-2">Care</span></h5></Link>
         <Searchbar />
         {token === undefined ? <>
           <div class="navigation-item-3 flex-hz">

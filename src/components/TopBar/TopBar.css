@@ -36,8 +36,19 @@
   html {
     font-size: 50%;
   }
-
-  .top-bar {
-    display: none;
-  }
+ .top-bar{
+  height: 4rem;
+ 
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+.top-bar-item{
+  display: none;
+}
+.topbar-sale-title{
+  display: block;
+  width: 100%;
+}
 }
