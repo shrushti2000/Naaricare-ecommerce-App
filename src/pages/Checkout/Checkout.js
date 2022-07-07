@@ -17,7 +17,7 @@ const Checkout = () => {
     <>
       <div className='checkout-page-container flex-hz'>
         <div className='address-selection-container flex-vt'>
-          <h4>Select address to deliver</h4>
+          <h4 className='address-selection-title'>Select address to deliver</h4>
           {state.address.map(addressItem => {
             console.log(addressItem)
             return (

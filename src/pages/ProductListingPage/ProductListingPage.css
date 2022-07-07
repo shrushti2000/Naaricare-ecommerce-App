@@ -11,7 +11,11 @@
   width: auto;
   padding: 1rem;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+}
+.product-display-container-mb {
+  display: none;
 }
 
 .product-container {
@@ -24,4 +28,39 @@
 
 .card__icon {
   font-size: 3rem;
+}
+
+.filter-and-clear-bar {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 2rem;
+  width: 100%;
+  padding: 2rem;
+  background-color: var(--primary-bg-color);
+}
+
+.filter-text,
+.clear-filter-text {
+  cursor: pointer;
+  color: var(--primary-text-color);
+}
+
+.filter-text:hover,
+.clear-filter-text:hover {
+  color: var(--black);
+}
+
+@media only screen and (max-width: 600px) {
+  .product-page-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "maincontent";
+  }
+  .product-display-container {
+    width: auto;
+  }
+  .sub-heading {
+    margin-top: 30px;
+  }
 }

@@ -42,6 +42,7 @@ const stateReducer = (state, action) => {
         case 'SET_ADDRESS_EDIT_MODE': return { ...state, addressEditMode: action.payload }
         case 'SET_ADDRESS_TO_EDIT': return { ...state, addressToBeEdited: action.payload }
         case 'UPDATE_ADDRESS': return { ...state, address: state.address.map(item => item.address_id === action.payload.address_id ? action.payload : item) }
+        case 'SET_SHOW_SIDEBAR_FOR_MOBILE':return {...state,showSidebarForMobile:!state.showSidebarForMobile}
         default: return state
     }
 

@@ -1,9 +1,19 @@
-.forgot-pw-text {
-    color: var(--info-color);
-    margin: 1rem;
-    text-align: right;
+::placeholder {
+  color: var(--light-grey);
 }
 
-::placeholder {
-    color: var(--light-grey);
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+  .form-control {
+    width: 35rem;
+  }
+  .form-container,
+  .form-group {
+    width: 40rem;
+  }
+  .btn-secondary {
+    width: 37rem;
+  }
 }
