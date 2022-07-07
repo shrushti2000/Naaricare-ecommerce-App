@@ -31,8 +31,9 @@
   .lib-name-sm {
     display: block;
   }
+
   .navigation-container {
     top: 29px;
-  position: sticky;
+    position: sticky;
   }
 }

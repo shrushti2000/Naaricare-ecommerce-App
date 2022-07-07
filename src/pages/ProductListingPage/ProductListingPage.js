@@ -2,7 +2,7 @@ import React from "react";
 import { useContext, useEffect } from "react";
 import { useRef } from "react";
 import "../../App.css";
-import { Sidebar, ProductCard } from "../../components/index";
+import { Sidebar, ProductCard, Searchbar } from "../../components/index";
 import { StateContext } from "../../Context";
 import {
   getFilteredData,
@@ -46,7 +46,7 @@ const ProductListingPage = () => {
             </>
           ) : (
             <>
-              {" "}
+              {isMobile && <Searchbar />}{" "}
               <h2 class="sub-heading">Showing all Products</h2>
               <div class="product-container">
                 {filteredData.map((item) => (

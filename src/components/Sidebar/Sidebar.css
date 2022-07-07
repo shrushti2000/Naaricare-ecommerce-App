@@ -88,6 +88,7 @@ input[type="checkbox"] {
   .filter-sidebar {
     display: none;
   }
+  
   .close-sidebar {
     font-size: 3rem;
     cursor: pointer;

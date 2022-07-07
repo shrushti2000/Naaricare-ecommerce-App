@@ -51,7 +51,7 @@ const Header = () => {
             Naari <span class="lib-name-2">Care</span>
           </h5>
         </Link>
-        <Searchbar />
+        {!isMobile && <Searchbar />}
         {token === undefined ? (
           <>
             <div class="navigation-item-3 flex-hz">
