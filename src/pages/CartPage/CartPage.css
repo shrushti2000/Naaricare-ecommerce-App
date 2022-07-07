@@ -104,4 +104,14 @@
   .card__btn-secondary {
     font-size: 1rem;
   }
+  .cart-summary-container {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .price-wrapper {
+    width: 100%;
+  }
+  .btn-secondary.checkout-btn {
+    width: 20rem;
+  }
 }

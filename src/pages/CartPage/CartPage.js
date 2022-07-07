@@ -73,7 +73,7 @@ const CartPage = () => {
             <p class="text-sm">Rs {finalCartPrice}</p>
           </div>
 
-          <Link to="/checkout" className="links"> <button class="btn btn-secondary">Checkout</button></Link>
+          <Link to="/checkout" className="links"> <button className="btn btn-secondary checkout-btn">Checkout</button></Link>
         </div>
       </div>
     </>
