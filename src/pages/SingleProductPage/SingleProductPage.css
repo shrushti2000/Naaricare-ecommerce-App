@@ -49,3 +49,27 @@
 .heart-icon-single-prd-page:hover {
     color: var(--secondary-bg-color);
 }
+
+@media only screen and (max-width: 600px) {
+    html {
+      font-size: 50%;
+    }
+  
+    .singleProductPage-container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20rem;
+        width: 80%;
+        
+    }
+    
+    .singleProductPage-img{
+        width: 40rem;
+        height: 30rem;
+    }
+    
+    .singleProductPage-title {
+        font-size: 2rem;
+    }
+  }
+  
