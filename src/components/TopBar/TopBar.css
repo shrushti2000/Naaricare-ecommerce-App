@@ -28,7 +28,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin: 1rem;
-  z-index: 2;
+  z-index: 4;
   color: var(--primary-text-color);
 }
 
@@ -36,19 +36,18 @@
   html {
     font-size: 50%;
   }
- .top-bar{
-  height: 4rem;
- 
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 2;
-}
-.top-bar-item{
-  display: none;
-}
-.topbar-sale-title{
-  display: block;
-  width: 100%;
-}
+  .top-bar {
+    height: 4rem;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 4;
+  }
+  .top-bar-item {
+    display: none;
+  }
+  .topbar-sale-title {
+    display: block;
+    width: 100%;
+  }
 }

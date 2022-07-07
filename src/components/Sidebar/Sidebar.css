@@ -73,3 +73,23 @@ input[type="checkbox"] {
   border-radius: 50%;
   cursor: pointer;
 }
+
+.filter-sidebar-sm {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: var(--white);
+  z-index: 6;
+  width: 100%;
+  max-height: fit-content;
+}
+
+@media only screen and (max-width: 600px) {
+  .filter-sidebar {
+    display: none;
+  }
+  .close-sidebar {
+    font-size: 3rem;
+    cursor: pointer;
+  }
+}

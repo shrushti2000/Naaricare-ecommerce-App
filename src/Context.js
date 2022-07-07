@@ -25,7 +25,8 @@ const Context = ({ children }) => {
     address: [],
     showAddressModal: false,
     addressEditMode: false,
-    addressToBeEdited: {}
+    addressToBeEdited: {},
+    showSidebarForMobile:false
   })
 
 
