@@ -21,7 +21,7 @@
 
 @media only screen and (max-width: 600px) {
   .card__container {
-    width: 160px;
+    width: 140px;
   }
   .card__image {
     height: 160px;
