@@ -17,6 +17,12 @@ const SingleProductPage = () => {
   const [productItem, setProductItem] = useState({})
   const { state, dispatch } = useContext(StateContext)
   const { token } = useContext(AuthContext)
+  const  [btntext,setBtntext]=useState("Add to cart")
+
+  useEffect(()=>{
+    const isItemPresent = state.cart.find(item => item._id === productId)
+    isItemPresent ? setBtntext("Go to cart"): setBtntext("Add to cart")
+  })
 
   useEffect(() => {
     async function fetchData() {
@@ -31,8 +37,17 @@ const SingleProductPage = () => {
     fetchData();
   }, [productId])
   const handleAddTOCart = () => {
-    const isItemPresent = state.cart.find(item => item._id === productId)
-    { isItemPresent === undefined && addToCart(productItem, token, dispatch) }
+    if(btntext==="Add to cart"){
+      const isItemPresent = state.cart.find(item => item._id === productId)
+      { isItemPresent === undefined && addToCart(productItem, token, dispatch)
+      setBtntext("go to cart")
+    }}else{
+      navigate('/cartpage')
+    }
+   
+    
+    
+
   }
   return (
     <>
@@ -49,7 +64,7 @@ const SingleProductPage = () => {
           <span> <h5 className='singleProductPage-price'>MRP: Rs {productItem.price}</h5> <h5 className='singleProductPage-discount'> {productItem.discount} % off</h5></span>
           <div className='flex-hz'>
             <FontAwesomeIcon icon={faHeart} className="heart-icon-single-prd-page" onClick={() => handleAddToWishlist(state.wishlist, productItem, token, dispatch, navigate)} />
-            <button class="btn btn-primary card__btn-primary singleProductPage-btn" onClick={handleAddTOCart}>add to cart</button>
+            <button class="btn btn-primary card__btn-primary singleProductPage-btn" onClick={handleAddTOCart}>{btntext}</button>
           </div>
         </div>
       </div>
