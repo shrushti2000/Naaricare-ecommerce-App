@@ -13,13 +13,17 @@ const CartPage = () => {
   const totalPrice = findPriceOfAllItems(state.cart)
   const totalDiscount = findTotalDiscount(state.cart)
   const finalCartPrice = calculateFinalCartPrice(totalPrice, totalDiscount, 50)
-
+  
   return (
     <>
       <h5 class="sub-heading">My Cart</h5>
       <div class="cart-page-container">
         <div class="cart-items-display">
         {state.cart.length===0? <><h3>Your cart is empty!</h3></>:<> {state.cart.map(item => {
+       const isItemPresentInCart= state.cart.includes(item) 
+       const isItemPresentInWishlist=state.wishlist.find(i=>i._id===item._id) 
+       const ans= isItemPresentInWishlist===undefined
+       
             return (
               <>
                 <div class="card__container card-horizontal cart-card flex-hz">
@@ -37,17 +41,27 @@ const CartPage = () => {
                       <p class="card__text-primary">Quantity: </p>
                       <span class="flex-hz"><i class="fa fa-plus card-icon-plus" onClick={(e) => updateProductQty(item._id, token, dispatch, "increment")}></i>
                         <p class="card-text">{item.qty}</p>
-                        <i class="fa fa-minus card-icon-plus" onClick={(e) => item.qty > 1 && updateProductQty(item._id, token, dispatch, "decrement")}></i>
+                       {
+                        item.qty===1 ? <> <i class="fa fa-minus card-icon-minus-disabled"></i></>:<> <i class="fa fa-minus card-icon-plus" onClick={(e) => item.qty > 1 && updateProductQty(item._id, token, dispatch, "decrement")}></i></>
+                       }
                       </span>
                     </div>
-                    <div class="card-footer flex-hz">
-                      <button class="btn btn-primary card__btn-primary" onClick={(e) => handleAddToWishlist(state.wishlist, item, token, dispatch, null)}>
-                        MOVE TO WISHLIST
-                      </button>
-                      <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id, token, dispatch)}>
-                        REMOVE FROM CART
-                      </button>
-                    </div>
+                    {
+                     
+                      (isItemPresentInCart && isItemPresentInWishlist)  ? <><div class="card-footer flex-hz">
+                    
+                     <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id, token, dispatch)}>
+                       REMOVE FROM CART
+                     </button>
+                   </div></>:<><div class="card-footer flex-hz">
+                     <button class="btn btn-primary card__btn-primary" onClick={(e) => handleAddToWishlist(state.wishlist, item, token, dispatch, null)}>
+                       MOVE TO WISHLIST
+                     </button>
+                     <button class="btn btn-outline-primary card__btn-secondary" onClick={(e) => removeFromCart(item._id, token, dispatch)}>
+                       REMOVE FROM CART
+                     </button>
+                   </div></>
+                    }
                   </div>
                 </div>
               </>

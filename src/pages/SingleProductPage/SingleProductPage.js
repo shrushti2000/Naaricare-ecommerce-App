@@ -37,6 +37,7 @@ const SingleProductPage = () => {
     fetchData();
   }, [productId])
   const handleAddTOCart = () => {
+   if(token){
     if(btntext==="Add to cart"){
       const isItemPresent = state.cart.find(item => item._id === productId)
       { isItemPresent === undefined && addToCart(productItem, token, dispatch)
@@ -44,6 +45,9 @@ const SingleProductPage = () => {
     }}else{
       navigate('/cartpage')
     }
+   }else{
+    navigate('/signin')
+   }
    
     
     

@@ -1,51 +1,65 @@
-import React from 'react'
-import { useContext } from 'react'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import  { AuthContext } from '../../AuthProvider';
-import { addToCart, updateProductQty } from '../../Services/CartServices'
-import { StateContext } from '../../Context'
-import { handleAddToWishlist, removeFromWishlist } from '../../Services/WishlistServices';
+import React from "react";
+import { useContext } from "react";
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider";
+import { addToCart, updateProductQty } from "../../Services/CartServices";
+import { StateContext } from "../../Context";
+import {
+  handleAddToWishlist,
+  removeFromWishlist,
+} from "../../Services/WishlistServices";
 
-import './ProductCard.css'
+import "./ProductCard.css";
 
 const ProductCard = ({ item }) => {
-  const { token } = useContext(AuthContext)
-  console.log(token)
-  const { state, dispatch } = useContext(StateContext)
+  const { token } = useContext(AuthContext);
+  console.log(token);
+  const { state, dispatch } = useContext(StateContext);
   let navigate = useNavigate();
-  const [cartButtonText, setCartButtonText] = useState('ADD TO CART')
-  const [heartColor, setHeartColor] = useState('#F3C5C5')
+  const [cartButtonText, setCartButtonText] = useState("ADD TO CART");
+  const [heartColor, setHeartColor] = useState("#F3C5C5");
+  const location = useLocation();
+
+  const currentpage = location.pathname;
+  console.log(currentpage);
   const handleAddTOCart = () => {
-    const isItemPresent = state.cart.find(itemInCart => itemInCart._id === item._id)
+    const isItemPresent = state.cart.find(
+      (itemInCart) => itemInCart._id === item._id
+    );
 
     if (cartButtonText === "ADD TO CART") {
       if (token === undefined) {
-        navigate('/signin')
+        navigate("/signin");
       } else {
         if (isItemPresent === undefined) {
-          addToCart(item, token, dispatch)
-          setCartButtonText('GO TO CART')
+          addToCart(item, token, dispatch);
+          setCartButtonText("GO TO CART");
         } else {
-          const isItemPresentInWishList = state.wishlist.find(itemInWishlist => itemInWishlist._id === item._id)
+          const isItemPresentInWishList = state.wishlist.find(
+            (itemInWishlist) => itemInWishlist._id === item._id
+          );
           if (isItemPresentInWishList !== undefined) {
-            updateProductQty(item._id, token, dispatch, "increment")
+            updateProductQty(item._id, token, dispatch, "increment");
           }
-          setCartButtonText("GO TO CART")
+          setCartButtonText("GO TO CART");
         }
       }
     } else {
-      navigate('/cartpage')
+      navigate("/cartpage");
     }
-  }
+  };
 
   const openSingleProductPage = (e) => {
-    console.log(e.target.className)
-    if (e.target.className !== "btn btn-primary card__btn-primary" && e.target.className !== "fa fa-heart card__icon") {
-      navigate(`/product/${item._id}`)
+    console.log(e.target.className);
+    if (
+      e.target.className !== "btn btn-primary card__btn-primary" &&
+      e.target.className !== "fa fa-heart card__icon" &&
+      e.target.className !== "fa fa-heart card__icon-dark"
+    ) {
+      navigate(`/product/${item._id}`);
     }
-
-  }
+  };
 
   return (
     <div class="card__container flex-vt" onClick={openSingleProductPage}>
@@ -58,18 +72,61 @@ const ProductCard = ({ item }) => {
       </div>
       <div class="card__text-wrapper-2">
         <span>{item.rating}</span>
-        <span><i class="fa fa-star"></i></span>
+        <span>
+          <i class="fa fa-star"></i>
+        </span>
       </div>
       <div class="card__footer flex-hz">
+        {state.wishlist.find((i) => i._id === item._id) !== undefined ? (
+          <>
+            {" "}
+            {/* <div>
+              <button
+                class="btn btn-primary card__btn-primary"
+                onClick={() => removeFromWishlist(item._id, token, dispatch)}
+              >
+                Remove
+              </button>
+            </div> */}
+            <div>
+              <i
+                class="fa fa-heart card__icon-dark"
+                onClick={(e) =>
+                  removeFromWishlist(item._id, token, dispatch, e)
+                }
+              ></i>
+            </div>
+          </>
+        ) : (
+          <>
+            {" "}
+            <div>
+              <i
+                class="fa fa-heart card__icon"
+                onClick={() =>
+                  handleAddToWishlist(
+                    state.wishlist,
+                    item,
+                    token,
+                    dispatch,
+                    navigate,
+                    currentpage
+                  )
+                }
+              ></i>
+            </div>
+          </>
+        )}
 
-        {state.wishlist.includes(item) ? <>  <div><button class="btn btn-primary card__btn-primary" onClick={() => removeFromWishlist(item._id, token, dispatch)}>Remove</button></div></> : <>  <div><i style={{ color: `${heartColor}` }} class="fa fa-heart card__icon" onClick={() => handleAddToWishlist(state.wishlist, item, token, dispatch, navigate)}></i></div></>}
-
-        <button class="btn btn-primary card__btn-primary" onClick={handleAddTOCart}>{cartButtonText}</button>
+        <button
+          class="btn btn-primary card__btn-primary"
+          onClick={handleAddTOCart}
+        >
+          {cartButtonText}
+        </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { ProductCard }
-
-
+export { ProductCard };
