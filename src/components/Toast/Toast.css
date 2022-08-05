@@ -8,6 +8,7 @@
     text-align: center;
     z-index: 2;
     background-color: red;
+    visibility: visible;
 }
 
 .close-toast-success {
