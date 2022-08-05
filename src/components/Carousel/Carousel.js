@@ -3,6 +3,7 @@ import './Carousel.css'
 import CarouselImage1 from '../../assets/Images/sliderImage1.png'
 import CarouselImage2 from '../../assets/Images/sliderImage2.png'
 import CarouselImage3 from '../../assets/Images/sliderImage3.png'
+import { Link } from 'react-router-dom'
 
 const Carousel = () => {
   const slides = [
@@ -30,6 +31,7 @@ const Carousel = () => {
     <div className='carousel'>
       <div className='carousel-container' style={{ backgroundImage: `url(${slides[sliderCount]})` }} >
         <i className="fa fa-angle-left fa-5x" onClick={prevSlide}></i>
+        <Link to="/productlistingpage"><button className='hero-btn'>Shop now</button></Link>
         <i className="fa fa-angle-right fa-5x" onClick={nextSlide}></i>
       </div>
     </div>

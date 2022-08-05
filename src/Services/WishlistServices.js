@@ -1,14 +1,16 @@
 import axios from "axios";
 import { removeFromCart } from "./CartServices";
 
-export const handleAddToWishlist = (wishlist, item, token, dispatch, navigate) => {
+export const handleAddToWishlist = (wishlist, item, token, dispatch, navigate,currentpage) => {
   if (token === undefined) {
     navigate('/signin')
   } else {
     const isItemPresent = wishlist.find(itemInWishlist => itemInWishlist._id === item._id)
-    if (isItemPresent === undefined) {
+    if (isItemPresent === undefined && currentpage!=='/productlistingpage') {
       addToWishlist(item, token, dispatch)
       removeFromCart(item._id, token, dispatch)
+    }else if(currentpage==='/productlistingpage'){
+      addToWishlist(item, token, dispatch)
     }
   }
 
@@ -31,8 +33,9 @@ export const addToWishlist = (item, token, dispatch) => {
   }
 }
 
-export const removeFromWishlist = async (id, token, dispatch) => {
+export const removeFromWishlist = async (id, token, dispatch,e) => {
   try {
+  
     const {
       data: { wishlist },
     } = await axios.delete(`api/user/wishlist/${id}`, {
@@ -41,6 +44,8 @@ export const removeFromWishlist = async (id, token, dispatch) => {
       },
     });
     dispatch({ type: 'SET_WISHLIST', payload: wishlist })
+   
+   
   } catch (error) {
     console.log("Error in wishlist service", error);
   }
